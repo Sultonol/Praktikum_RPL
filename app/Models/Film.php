@@ -18,7 +18,8 @@ class Film extends Model
         'durasi',
         'sinopsis',
         'sutradara',
-        'trailer'
+        'trailer',
+        'poster'
     ];
 
     public function genre(){

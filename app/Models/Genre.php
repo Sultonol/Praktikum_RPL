@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Genre extends Model
 {
     use HasFactory;
-    protected $table = 'genre_id';
+    protected $table = 'genre';
     protected $primaryKey = 'genre_id';
 
     protected $fillable = [

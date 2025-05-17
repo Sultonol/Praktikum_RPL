@@ -9,7 +9,7 @@ class FilmController extends Controller
 {
     public function index()
     {
-        $films = Film::with('genre')->paginate(10);
+        $films = Film::with('genre')->paginate(20);
         return view('film', compact('films'));
     }
     public function dashboardFilms()
