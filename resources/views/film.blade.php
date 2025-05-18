@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <title>Daftar Film</title>
@@ -13,7 +14,7 @@
             margin: 0;
         }
 
-				 .btn-back-dashboard {
+        .btn-back-dashboard {
             display: inline-block;
             margin-bottom: 20px;
             padding: 10px 25px;
@@ -33,7 +34,7 @@
             margin-bottom: 40px;
             font-weight: 700;
             letter-spacing: 1.2px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         .film-container {
@@ -56,7 +57,7 @@
         }
 
         .film-card:hover {
-            box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
         }
 
         .film-card img {
@@ -64,14 +65,18 @@
             height: 320px;
             object-fit: cover;
             display: block;
-            transition: none; /* hilangkan efek zoom */
+            transition: none;
+            /* hilangkan efek zoom */
             border-radius: 12px;
         }
 
         /* Overlay saat hover */
         .film-card .overlay {
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: rgba(0, 0, 0, 0.45);
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -81,12 +86,14 @@
             align-items: center;
             gap: 12px;
             border-radius: 12px;
-            pointer-events: none; /* supaya overlay tidak blok klik saat tidak terlihat */
+            pointer-events: none;
+            /* supaya overlay tidak blok klik saat tidak terlihat */
         }
 
         .film-card:hover .overlay {
             opacity: 1;
-            pointer-events: auto; /* aktifkan klik saat hover */
+            pointer-events: auto;
+            /* aktifkan klik saat hover */
         }
 
         /* Tombol Lihat Trailer */
@@ -151,6 +158,7 @@
             body {
                 padding: 15px;
             }
+
             .film-card img {
                 height: 240px;
             }
@@ -160,14 +168,17 @@
         #modalTrailer {
             display: none;
             position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background-color: rgba(0, 0, 0, 0.7);
             z-index: 999999;
             align-items: center;
             justify-content: center;
         }
 
-        #modalTrailer > div {
+        #modalTrailer>div {
             background: #0f0f0f;
             width: 800px;
             max-width: 90vw;
@@ -175,7 +186,7 @@
             position: relative;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 0 20px rgba(0,0,0,0.7);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -195,27 +206,36 @@
         }
     </style>
 </head>
+
 <body>
 
-		 <a href="/dashboard" class="btn-back-dashboard">← Kembali ke Dashboard</a>
+    <a href="/dashboard" class="btn-back-dashboard">← Kembali ke Dashboard</a>
     <h2>Daftar Film ({{ count($films) }})</h2>
 
     <div class="film-container">
-        @foreach($films as $film)
-        <div class="film-card">
-            <img src="{{ asset($film->poster) }}" alt="Poster {{ $film->judul }}">
-            <!-- Overlay dengan tombol saat hover -->
-            <div class="overlay">
-                <button class="btn-trailer-hover" data-trailer="{{ $film->trailer }}">Lihat trailer</button>
-                <button class="btn-beli-hover">Beli tiket</button>
+        @foreach ($films as $film)
+            <div class="film-card">
+                <img src="{{ asset($film->poster) }}" alt="Poster {{ $film->judul }}">
+                <!-- Overlay dengan tombol saat hover -->
+                <div class="overlay">
+                    <button class="btn-trailer-hover" data-trailer="{{ $film->trailer }}">Lihat trailer</button>
+                    <button class="btn-beli-hover"
+                       onclick="window.location.href='{{ route('jadwal.index', ['film_id' => $film->film_id]) }}'">Beli
+                        tiket</button>
+                </div>
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
+
+                <div class="film-content">
+                    <h4>{{ $film->judul }}</h4>
+                    <p><strong>Durasi:</strong> {{ $film->durasi }} menit</p>
+                    <p><strong>Sutradara:</strong> {{ $film->sutradara }}</p>
+                    {{-- <p><strong>Sinopsis:</strong>{{ $film->sinopsis }}</p> --}}
+                </div>
             </div>
-            <div class="film-content">
-                <h4>{{ $film->judul }}</h4>
-                <p><strong>Durasi:</strong> {{ $film->durasi }} menit</p>
-                <p><strong>Sutradara:</strong> {{ $film->sutradara }}</p>
-								{{-- <p><strong>Sinopsis:</strong>{{ $film->sinopsis }}</p> --}}
-            </div>
-        </div>
         @endforeach
     </div>
 
@@ -226,105 +246,106 @@
         </div>
     </div>
 
-<script>
-    const modal = document.getElementById('modalTrailer');
-    const modalContent = modal.querySelector('div');
-    const modalClose = document.getElementById('modalClose');
+    <script>
+        const modal = document.getElementById('modalTrailer');
+        const modalContent = modal.querySelector('div');
+        const modalClose = document.getElementById('modalClose');
 
-    function createVideoEmbed(url) {
-        if (!url) return null;
+        function createVideoEmbed(url) {
+            if (!url) return null;
 
-        if (url.includes('youtube.com') || url.includes('youtu.be')) {
-            let videoId = '';
-            if (url.includes('youtu.be')) {
-                videoId = url.split('youtu.be/')[1].split(/[?&]/)[0];
-            } else {
-                const urlParams = new URL(url).searchParams;
-                videoId = urlParams.get('v');
-            }
-            if (!videoId) return null;
-
-            const iframe = document.createElement('iframe');
-            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-            iframe.frameBorder = "0";
-            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-            iframe.allowFullscreen = true;
-            iframe.style.width = '100%';
-            iframe.style.height = '100%';
-            return iframe;
-        } else if (url.endsWith('.mp4')) {
-            const video = document.createElement('video');
-            video.src = url;
-            video.controls = true;
-            video.autoplay = true;
-            video.muted = false;  // supaya suara ada (beberapa browser mungkin blok autoplay suara)
-            video.style.width = '100%';
-            video.style.height = '100%';
-            video.style.backgroundColor = 'black';
-
-            // Supaya autoplay di browser yang ketat bisa jalan, kita coba set muted dulu lalu unmute saat play
-            video.muted = true;
-            video.play().catch(() => {
-                // gagal autoplay, user klik manual
-            });
-
-            video.addEventListener('click', () => {
-                if(video.muted) {
-                    video.muted = false;
-                    video.play();
+            if (url.includes('youtube.com') || url.includes('youtu.be')) {
+                let videoId = '';
+                if (url.includes('youtu.be')) {
+                    videoId = url.split('youtu.be/')[1].split(/[?&]/)[0];
+                } else {
+                    const urlParams = new URL(url).searchParams;
+                    videoId = urlParams.get('v');
                 }
-            });
+                if (!videoId) return null;
 
-            return video;
-        }
-        return null;
-    }
+                const iframe = document.createElement('iframe');
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+                iframe.frameBorder = "0";
+                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                iframe.allowFullscreen = true;
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                return iframe;
+            } else if (url.endsWith('.mp4')) {
+                const video = document.createElement('video');
+                video.src = url;
+                video.controls = true;
+                video.autoplay = true;
+                video.muted = false; // supaya suara ada (beberapa browser mungkin blok autoplay suara)
+                video.style.width = '100%';
+                video.style.height = '100%';
+                video.style.backgroundColor = 'black';
 
-    document.querySelectorAll('.btn-trailer-hover').forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.stopPropagation(); // agar klik tombol tidak memicu klik film-card lain
-            const trailerURL = button.getAttribute('data-trailer');
-            if (!trailerURL) {
-                alert('Trailer tidak tersedia!');
-                return;
+                // Supaya autoplay di browser yang ketat bisa jalan, kita coba set muted dulu lalu unmute saat play
+                video.muted = true;
+                video.play().catch(() => {
+                    // gagal autoplay, user klik manual
+                });
+
+                video.addEventListener('click', () => {
+                    if (video.muted) {
+                        video.muted = false;
+                        video.play();
+                    }
+                });
+
+                return video;
             }
+            return null;
+        }
 
-            // Bersihkan konten modal (kecuali tombol close)
+        document.querySelectorAll('.btn-trailer-hover').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation(); // agar klik tombol tidak memicu klik film-card lain
+                const trailerURL = button.getAttribute('data-trailer');
+                if (!trailerURL) {
+                    alert('Trailer tidak tersedia!');
+                    return;
+                }
+
+                // Bersihkan konten modal (kecuali tombol close)
+                Array.from(modalContent.children).forEach(child => {
+                    if (child !== modalClose) modalContent.removeChild(child);
+                });
+
+                const videoEmbed = createVideoEmbed(trailerURL);
+                if (!videoEmbed) {
+                    alert('Trailer tidak tersedia atau format tidak didukung!');
+                    return;
+                }
+
+                modalContent.appendChild(videoEmbed);
+                modal.style.display = 'flex';
+            });
+        });
+
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+            // Stop video & hapus
             Array.from(modalContent.children).forEach(child => {
-                if (child !== modalClose) modalContent.removeChild(child);
-            });
-
-            const videoEmbed = createVideoEmbed(trailerURL);
-            if (!videoEmbed) {
-                alert('Trailer tidak tersedia atau format tidak didukung!');
-                return;
-            }
-
-            modalContent.appendChild(videoEmbed);
-            modal.style.display = 'flex';
-        });
-    });
-
-    modalClose.addEventListener('click', () => {
-        modal.style.display = 'none';
-        // Stop video & hapus
-        Array.from(modalContent.children).forEach(child => {
-            if (child !== modalClose) {
-                if (child.tagName === 'VIDEO') {
-                    child.pause();
-                    child.currentTime = 0;
+                if (child !== modalClose) {
+                    if (child.tagName === 'VIDEO') {
+                        child.pause();
+                        child.currentTime = 0;
+                    }
+                    modalContent.removeChild(child);
                 }
-                modalContent.removeChild(child);
+            });
+        });
+
+        modal.addEventListener('click', e => {
+            if (e.target === modal) {
+                modalClose.click();
             }
         });
-    });
-
-    modal.addEventListener('click', e => {
-        if (e.target === modal) {
-            modalClose.click();
-        }
-    });
-</script>
+    </script>
 
 </body>
+
 </html>

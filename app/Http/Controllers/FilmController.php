@@ -14,7 +14,7 @@ class FilmController extends Controller
     }
     public function dashboardFilms()
     {
-        $films = Film::with('genre')->take(20)->get(); 
+        $films = Film::with('genre')->take(20)->get();
         return view('dashboard', compact('films'));
     }
 }

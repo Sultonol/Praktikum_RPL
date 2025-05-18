@@ -17,7 +17,8 @@ class Reservasi extends Model
         'user_id',
         'jadwal_id',
         'kursi_id',
-        'status_pemesanan',
+        'kode_tiket',
+        'harga',
     ];
 
     public function user()
@@ -33,5 +34,9 @@ class Reservasi extends Model
     public function kursi()
     {
         return $this->belongsTo(Kursi::class, 'kursi_id', 'kursi_id');
+    }
+
+    public function pembayaran(){
+        return $this->hasOne(Pembayaran::class, 'reservasi_id', 'reservasi_id');
     }
 }

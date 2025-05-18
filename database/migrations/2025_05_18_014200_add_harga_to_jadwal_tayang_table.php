@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bioskop', function (Blueprint $table) {
-            $table->id('bioskop_id');
-            $table->string('nama_bioskop');
-            $table->string('alamat');
-            $table->string('kota');
-            $table->timestamps();
+        Schema::table('jadwal_tayang', function (Blueprint $table) {
+            $table->integer('harga')->after('jam_tayang')->default('40000');
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bioskop');
+        Schema::table('jadwal_tayang', function (Blueprint $table) {
+            $table->dropColumn('harga');
+        });
     }
 };

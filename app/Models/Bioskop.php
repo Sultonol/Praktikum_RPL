@@ -16,6 +16,7 @@ class Bioskop extends Model
     protected $fillable = [
         'nama_bioskop',
         'alamat',
+        'kota'
     ];
 
     public function studio()

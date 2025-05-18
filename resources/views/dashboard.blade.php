@@ -243,8 +243,9 @@
                         class="{{ request()->routeIs('dashboard') ? 'text-yellow-400' : '' }}">Beranda</a>
                 </li>
                 <li>
-                    <a href="{{ route('jadwal') }}"
-                        class="{{ request()->routeIs('jadwal') ? 'text-yellow-400' : '' }}">Jadwal</a>
+                    <a href="{{ route('jadwal.index') }}"
+                        class="{{ request()->routeIs('jadwal.index') ? 'text-yellow-400' : '' }}">Jadwal</a>
+
                 </li>
                 <li>
                     <a href="{{ route('tiket') }}"
