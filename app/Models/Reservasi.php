@@ -19,6 +19,8 @@ class Reservasi extends Model
         'kursi_id',
         'kode_tiket',
         'harga',
+        'status_reservasi',
+        'waktu_reservasi',
     ];
 
     public function user()

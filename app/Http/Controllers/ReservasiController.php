@@ -16,7 +16,12 @@ class ReservasiController extends Controller
     {
         $jadwal = JadwalTayang::with(['film', 'studio.bioskop'])->findOrFail($jadwal_id);
         $kursis = Kursi::where('studio_id', $jadwal->studio_id)->get();
-        return view('reservasi', compact('jadwal', 'kursis'));
+        $reservedKursiIds = Reservasi::where('jadwal_id', $jadwal_id)
+            ->whereIn('status_reservasi', ['pending', 'paid'])
+            ->pluck('kursi_id')
+            ->toArray();
+
+        return view('reservasi', compact('jadwal', 'kursis', 'reservedKursiIds'));
     }
 
     public function simpanReservasi(Request $request)
@@ -27,9 +32,17 @@ class ReservasiController extends Controller
             'kursi_id.*' => 'exists:kursi,kursi_id',
             'metode_pembayaran' => 'required|string',
         ]);
-        $jadwal = JadwalTayang::findOrFail($validated['jadwal_id']);
 
+        $jadwal = JadwalTayang::findOrFail($validated['jadwal_id']);
         $hargaFix = $jadwal->harga < 40000 ? 35000 : 45000;
+        $kursiSudahDipesan = Reservasi::where('jadwal_id', $validated['jadwal_id'])
+            ->whereIn('kursi_id', $validated['kursi_id'])
+            ->whereIn('status_reservasi', ['pending', 'paid'])
+            ->exists();
+
+        if ($kursiSudahDipesan) {
+            return redirect()->back()->withErrors(['kursi_id' => 'Salah satu atau lebih kursi sudah dipesan oleh pengguna lain. Silakan pilih kursi lain.']);
+        }
 
         $reservasiIds = [];
 
@@ -42,6 +55,8 @@ class ReservasiController extends Controller
                 'kursi_id' => $kursiId,
                 'harga' => $hargaFix,
                 'kode_tiket' => $kodeTiket,
+                'status_reservasi' => 'pending', 
+                'waktu_reservasi' => Carbon::now(), 
             ]);
 
             $reservasi->pembayaran()->create([
@@ -52,6 +67,6 @@ class ReservasiController extends Controller
 
             $reservasiIds[] = $reservasi->reservasi_id;
         }
-        return redirect()->route('pembayaran', ['reservasi_id' => $reservasi->reservasi_id]);
+        return redirect()->route('pembayaran', ['reservasi_id' => $reservasiIds[0]]);
     }
 }
