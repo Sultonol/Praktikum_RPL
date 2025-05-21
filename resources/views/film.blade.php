@@ -220,7 +220,7 @@
                 <div class="overlay">
                     <button class="btn-trailer-hover" data-trailer="{{ $film->trailer }}">Lihat trailer</button>
                     <button class="btn-beli-hover"
-                       onclick="window.location.href='{{ route('jadwal.index', ['film_id' => $film->film_id]) }}'">Beli
+                        onclick="window.location.href='{{ route('jadwal.index', ['film_id' => $film->film_id]) }}'">Beli
                         tiket</button>
                 </div>
                 @if (session('error'))

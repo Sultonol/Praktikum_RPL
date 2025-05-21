@@ -17,9 +17,10 @@
     <h3>Daftar Kursi:</h3>
     <form action="{{ route('simpanReservasi') }}" method="POST">
         <select name="metode_pembayaran" required>
-            <option value="transfer">Transfer</option>
-            <option value="gopay">GoPay</option>
-            <option value="cash">Cash</option>
+            <option value="pilih-transaksi">Pilih Transaksi</option>
+            <option value="transfer">Bank</option>
+            <option value="e-wallet">E-Wallet</option>
+            <option value="qris">Qris</option>
         </select>
         @csrf
         <input type="hidden" name="jadwal_id" value="{{ $jadwal->jadwal_id }}" />
