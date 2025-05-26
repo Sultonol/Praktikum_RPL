@@ -67,6 +67,7 @@ class ReservasiController extends Controller
 
             $reservasiIds[] = $reservasi->reservasi_id;
         }
-        return redirect()->route('pembayaran', ['reservasi_id' => $reservasiIds[0]]);
+        return redirect()->route('pembayaran', ['reservasi_id' => implode(',', $reservasiIds)]);
+
     }
 }
