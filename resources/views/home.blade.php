@@ -1,193 +1,335 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CineStream - Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Poppins:wght@600;800&display=swap" rel="stylesheet" />
     <style>
+        /* COLORS PALETTE */
+        :root {
+            --dark-purple: #2b0147;
+            --light-purple: #6f42c1;
+            --lighter-purple: #a084f0;
+            --black: #0f0f0f;
+            --white: #f5f5f5;
+            --gray-light: #cfcfe8;
+            --gray-dark: #3a2f5d;
+            --gold: #e6c200;
+        }
+
+        /* RESET & BASE */
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-    background-color: #0f0f0f;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-}
+            margin: 0;
+            background-color: var(--black);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
 
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem 2.5rem;
-    background-color: #0f0f0f;
-}
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-header .logo {
-    color: #ffd700;
-    font-weight: bold;
-    font-size: 1.125rem;
-}
+        /* HEADER */
+        header {
+            background: var(--dark-purple);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 3rem;
+            box-shadow: 0 3px 8px rgba(111, 66, 193, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-nav {
-    background-color: #1e1e1e;
-    padding: 0.5rem 1.25rem;
-    border-radius: 9999px;
-    display: flex;
-    gap: 1rem;
-}
+        header .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--lighter-purple);
+            letter-spacing: 0.1em;
+            user-select: none;
+        }
 
-nav a {
-    color: #ccc;
-    padding: 0.5rem 1.25rem;
-    border-radius: 9999px;
-    text-decoration: none;
-    background-color: transparent;
-    transition: all 0.2s ease;
-}
+        nav {
+            background-color: var(--gray-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            display: flex;
+            gap: 1.5rem;
+            box-shadow: 0 2px 10px rgba(111, 66, 193, 0.6);
+        }
 
-nav a:hover,
-nav a.active {
-    background-color: #333;
-    color: white;
-}
+        nav a {
+            color: var(--gray-light);
+            font-weight: 600;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 1rem;
+        }
 
-/* .avatar {
-    width: 2.25rem;
-    height: 2.25rem;
-    background-color: #ffd700;
-    border-radius: 9999px;
-} */
+        nav a:hover,
+        nav a.active {
+            background-color: var(--light-purple);
+            color: var(--white);
+            box-shadow: 0 0 8px var(--lighter-purple);
+        }
 
-.login-btn {
-    background-color: #1a1a1a;
-    color: white;
-    font-weight: 600;
-    padding: 0.5rem 1.25rem;
-    border-radius: 9999px;
-    text-decoration: none;
-}
+        .user-panel {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
 
-.login-btn:hover {
-    background-color: #e6c200
-}
+        .avatar {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--light-purple), var(--lighter-purple));
+            box-shadow: 0 0 8px var(--lighter-purple);
+            cursor: pointer;
+        }
 
-.user-panel {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
+        .login-btn,
+        .register-btn {
+            font-weight: 600;
+            padding: 0.55rem 1.4rem;
+            border-radius: 9999px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: 2px solid transparent;
+            font-size: 0.95rem;
+            cursor: pointer;
+            user-select: none;
+        }
 
-.register-btn {
-    background-color: #1a1a1a;
-    color: white;
-    font-weight: 600;
-    padding: 0.5rem 1.25rem;
-    border-radius: 9999px;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-}
+        .login-btn {
+            background-color: var(--black);
+            color: var(--lighter-purple);
+            border-color: var(--lighter-purple);
+            box-shadow: 0 0 6px var(--lighter-purple);
+        }
 
-.register-btn:hover {
-    background-color: #e6c200;
-}
+        .login-btn:hover {
+            background-color: var(--lighter-purple);
+            color: var(--black);
+            box-shadow: 0 0 12px var(--light-purple);
+        }
 
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 4rem 1.25rem;
-}
+        .register-btn {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
 
-.hero h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.25rem;
-    line-height: 1.3;
-    margin-bottom: 1.5rem;
-}
+        .register-btn:hover {
+            background-color: var(--lighter-purple);
+            border-color: var(--lighter-purple);
+            color: var(--black);
+            box-shadow: 0 0 12px var(--light-purple);
+        }
 
-.hero p {
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.125rem;
-    color: #cccccc;
-}
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 6rem 1.5rem 5rem;
+            background: linear-gradient(135deg, var(--dark-purple), var(--black));
+            box-shadow: inset 0 0 100px 10px rgba(111, 66, 193, 0.8);
+            user-select: none;
+        }
 
-.hero-buttons {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--lighter-purple);
+            text-shadow: 0 0 8px var(--light-purple);
+        }
 
-.hero-buttons button {
-    font-weight: 600;
-    padding: 0.75rem 1.25rem;
-    border-radius: 0.5rem;
-    border: none;
-    cursor: pointer;
-}
+        .hero h1 strong {
+            color: var(--gold);
+            text-shadow: 0 0 12px var(--gold);
+        }
 
-.hero-buttons .get-started {
-    background-color: #ffd700;
-    color: black;
-}
+        .hero p {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.25rem;
+            color: var(--gray-light);
+            max-width: 520px;
+            margin: 0 auto;
+            margin-bottom: 2.5rem;
+            text-shadow: 0 0 6px rgba(255 255 255 / 0.1);
+            user-select: text;
+        }
 
-.hero-buttons .show-film {
-    background-color: #1a1a1a;
-    color: white;
-    border: 1px solid white;
-}
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
 
-/* Film Card Section */
-.film-container {
-    display: flex;
-    gap: 1rem;
-    overflow-x: auto;
-    padding: 2.5rem 1.25rem;
-    scroll-behavior: smooth;
-}
+        .hero-buttons button {
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 0.75rem 2.5rem;
+            border-radius: 0.75rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(111, 66, 193, 0.6);
+            user-select: none;
+        }
 
-.film-container::-webkit-scrollbar {
-    display: none;
-}
+        .get-started {
+            background: linear-gradient(45deg, var(--light-purple), var(--lighter-purple));
+            color: var(--white);
+            text-shadow: 0 0 8px var(--lighter-purple);
+        }
 
-.film-card {
-    min-width: 220px;
-    background-color: #1e1e1e;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
-}
+        .get-started:hover {
+            background: linear-gradient(45deg, var(--lighter-purple), var(--light-purple));
+            box-shadow: 0 6px 25px var(--lighter-purple);
+            transform: scale(1.05);
+        }
 
-.film-card:hover {
-    transform: scale(1.05);
-}
+        .show-film {
+            background-color: transparent;
+            border: 2px solid var(--lighter-purple);
+            color: var(--lighter-purple);
+            text-shadow: none;
+        }
 
-.film-card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
+        .show-film:hover {
+            background-color: var(--lighter-purple);
+            color: var(--black);
+            box-shadow: 0 6px 20px var(--lighter-purple);
+            transform: scale(1.05);
+        }
 
-.film-card .info {
-    padding: 1rem;
-}
+        /* FILM CARDS */
+        .film-container {
+            display: flex;
+            gap: 1.25rem;
+            overflow-x: auto;
+            padding: 2.5rem 2.5rem 4rem;
+            scroll-behavior: smooth;
+            user-select: none;
+        }
 
-.film-card h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: white;
-}
+        .film-container::-webkit-scrollbar {
+            height: 8px;
+        }
 
-.film-card p {
-    font-size: 0.875rem;
-    color: #aaa;
-    margin-top: 0.25rem;
-}
+        .film-container::-webkit-scrollbar-track {
+            background: var(--dark-purple);
+            border-radius: 10px;
+        }
 
+        .film-container::-webkit-scrollbar-thumb {
+            background: var(--lighter-purple);
+            border-radius: 10px;
+        }
+
+        .film-card {
+            min-width: 220px;
+            background: linear-gradient(145deg, var(--gray-dark), var(--dark-purple));
+            border-radius: 1.25rem;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(111, 66, 193, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .film-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px var(--lighter-purple);
+        }
+
+        .film-card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--light-purple);
+            transition: filter 0.3s ease;
+        }
+
+        .film-card:hover img {
+            filter: brightness(1.1);
+        }
+
+        .info {
+            padding: 1.25rem 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .info h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-shadow: 0 0 8px var(--gold);
+        }
+
+        .info p {
+            margin: 0.3rem 0 0 0;
+            color: var(--gray-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 1.5rem;
+            }
+
+            nav {
+                gap: 0.75rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .film-container {
+                padding: 2rem 1rem 3rem;
+            }
+
+            .film-card {
+                min-width: 180px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons button {
+                padding: 0.6rem 1.8rem;
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
+
+<body
 
 <body>
     <header>

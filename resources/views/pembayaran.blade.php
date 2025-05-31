@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Tagihan Pembayaran Tiket</title>
@@ -13,9 +14,9 @@
         .tiket-card {
             background-color: #fff;
             border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             padding: 25px;
-						width: 400px;
+            width: 400px;
             margin-bottom: 25px;
         }
 
@@ -51,6 +52,7 @@
         }
     </style>
 </head>
+
 <body>
     <h2>Tagihan Pembayaran Tiket Anda</h2>
 
@@ -64,7 +66,8 @@
 
     <div class="tiket-card">
         <div class="judul-film">{{ $jadwal->film->judul }}</div>
-        <div class="detail">Studio: {{ $jadwal->studio->nomor_studio }} ({{ $jadwal->studio->bioskop->nama_bioskop }})</div>
+        <div class="detail">Studio: {{ $jadwal->studio->nomor_studio }} ({{ $jadwal->studio->bioskop->nama_bioskop }})
+        </div>
         <div class="detail">Tanggal & Waktu: {{ $jadwal->tanggal }} - {{ $jadwal->jam_tayang }}</div>
         <div class="detail">Nomor Kursi: {{ implode(', ', $kursiList) }}</div>
         <div class="detail">Jumlah Tiket: {{ count($kursiList) }}</div>
@@ -72,7 +75,7 @@
         <div class="detail">Status Pembayaran: <strong>{{ ucfirst($status) }}</strong></div>
         <div class="total">Total Harga: Rp {{ number_format($hargaTotal) }}</div>
 
-        @if($metodePembayaran === 'qris')
+        @if ($metodePembayaran === 'qris')
             <div class="qris">
                 <h4>Silakan scan QRIS Gopay berikut untuk membayar:</h4>
                 <img src="{{ asset('images/qris_gopay.png') }}" alt="QRIS Gopay" width="250">
@@ -82,4 +85,5 @@
 
     <a href="{{ route('jadwal.index') }}" class="btn-kembali">Kembali ke Beranda</a>
 </body>
+
 </html>
