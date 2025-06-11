@@ -1,190 +1,104 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login - Bioskop</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <style>:root {
-  --bg-dark: #121212;
-  --card-bg: #1e1e2f;
-  --primary-purple: #9f7aea;
-  --primary-purple-light: #c084fc;
-  --text-light: #f0e6ff;
-  --error-red: #ff4c4c;
-  --success-green: #9ae6b4;
-  --input-bg: #2a2a40;
-  --input-bg-focus: #383859;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login - CineStream</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .glass-effect {
+            backdrop-filter: blur(16px);
+            background: rgba(15, 15, 15, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
 
-* {
-  box-sizing: border-box;
-}
+        .elegant-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #f4e4a6 100%);
+        }
 
-body {
-  margin: 0;
-  background: var(--bg-dark);
-  font-family: 'Montserrat', sans-serif;
-  color: var(--text-light);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+        .text-elegant {
+            color: #d4af37;
+        }
 
-.login-container {
-  background: var(--card-bg);
-  padding: 40px 50px;
-  border-radius: 16px;
-  box-shadow: 0 0 30px rgba(159, 122, 234, 0.4);
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
-  transition: box-shadow 0.3s ease;
-}
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
 
-.login-container:hover {
-  box-shadow: 0 0 50px rgba(159, 122, 234, 0.6);
-}
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
 
-h2 {
-  margin-bottom: 30px;
-  font-weight: 700;
-  font-size: 2.4rem;
-  color: var(--primary-purple-light);
-  text-shadow: 0 0 10px var(--primary-purple);
-  letter-spacing: 2px;
-}
-
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 14px 18px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  font-size: 1rem;
-  background: var(--input-bg);
-  color: var(--text-light);
-  box-shadow: inset 0 0 5px #5c5c7a;
-  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-input[type="email"]:focus,
-input[type="password"]:focus {
-  background: var(--input-bg-focus);
-  box-shadow: 0 0 12px var(--primary-purple);
-  outline: none;
-  border-color: var(--primary-purple-light);
-}
-
-button {
-  width: 100%;
-  padding: 14px 0;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #ffffff;
-  background: linear-gradient(135deg, var(--primary-purple), var(--primary-purple-light));
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  letter-spacing: 1.5px;
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 6px 20px var(--primary-purple);
-}
-
-button:hover,
-button:focus {
-  background: linear-gradient(135deg, #b794f4, #d6bcfa);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px var(--primary-purple-light);
-  outline: none;
-}
-
-button:active {
-  transform: translateY(-1px);
-}
-
-.alert {
-  margin-bottom: 20px;
-  padding: 15px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-align: left;
-  user-select: none;
-}
-
-.alert-error {
-  background: #330000;
-  color: var(--error-red);
-  box-shadow: 0 0 12px #ff4c4c88;
-}
-
-.alert-success {
-  background: #113322;
-  color: var(--success-green);
-  box-shadow: 0 0 12px #9ae6b488;
-}
-
-ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
-.register-note {
-  margin-top: 25px;
-  font-size: 0.95rem;
-  color: #ccc;
-}
-
-.register-note a {
-  color: var(--primary-purple-light);
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.register-note a:hover,
-.register-note a:focus {
-  color: #fff;
-  text-decoration: underline;
-  outline: none;
-}
-
-  </style>
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
-<body>
-  <div class="login-container">
-    <h2>LOGIN BIOSKOP</h2>
 
-    @if ($errors->any())
-      <div class="alert alert-error">
-        <ul>
-          @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-          @endforeach
-        </ul>
-      </div>
-    @endif
+<body class="bg-black text-white font-['Inter'] min-h-screen flex items-center justify-center px-4">
 
-    @if(session('success'))
-      <div class="alert alert-success">
-        {{ session('success') }}
-      </div>
-    @endif
+    <div class="glass-effect p-10 rounded-2xl shadow-xl w-full max-w-md fade-in-up">
+        <div class="mb-8 text-center">
+            <!-- Logo kotak berupa ikon movie -->
+            <div class="flex justify-center mb-4">
+                <div class="w-16 h-16 elegant-gradient rounded-lg flex items-center justify-center shadow-lg">
+                    <!-- Ikon movie SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-black" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path d="M4 4h2l1 2h3L9 4h2l1 2h3l-1-2h2l1 2h3l-1-2h2v16H4V4zm2 6v8h12v-8H6z" />
+                    </svg>
+                </div>
+            </div>
+            <h2 class="text-3xl font-semibold mb-2">Login Akun</h2>
+            <p class="text-gray-400 text-sm">Masuk untuk melanjutkan ke CineStream</p>
+        </div>
 
-    <form action="{{ route('login.post') }}" method="POST" novalidate>
-      @csrf
-      <input type="email" name="email" placeholder="Email" required value="{{ old('email') }}" />
-      <input type="password" name="password" placeholder="Password" required />
-      <button type="submit">Masuk</button>
-    </form>
+        @if ($errors->any())
+            <div class="bg-red-900 border border-red-500 text-red-200 px-4 py-3 rounded mb-5 text-sm">
+                <ul class="list-disc list-inside">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
-    <div class="register-note">
-      Belum punya akun? <a href="{{ route('register') }}">Daftar Sekarang</a>
+        @if (session('success'))
+            <div class="bg-green-900 border border-green-500 text-green-200 px-4 py-3 rounded mb-5 text-sm">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        <form action="{{ route('login.post') }}" method="POST" class="space-y-5">
+            @csrf
+            <div>
+                <label for="email" class="block text-sm mb-1">Email</label>
+                <input type="email" name="email" id="email" required
+                    class="w-full px-4 py-3 rounded-lg bg-black/30 border border-gray-600 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-elegant"
+                    placeholder="Masukkan email">
+            </div>
+            <div>
+                <label for="password" class="block text-sm mb-1">Password</label>
+                <input type="password" name="password" id="password" required
+                    class="w-full px-4 py-3 rounded-lg bg-black/30 border border-gray-600 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-elegant"
+                    placeholder="Masukkan password">
+            </div>
+            <button type="submit"
+                class="w-full py-3 rounded-full elegant-gradient text-black font-semibold hover:scale-105 transition-transform duration-300">
+                Masuk
+            </button>
+        </form>
+
+        <div class="mt-6 text-center text-sm text-gray-400">
+            Belum punya akun?
+            <a href="{{ route('register') }}" class="text-elegant font-medium hover:underline">Daftar Sekarang</a>
+        </div>
     </div>
-  </div>
 </body>
+
 </html>
