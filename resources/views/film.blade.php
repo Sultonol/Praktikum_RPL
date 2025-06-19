@@ -55,6 +55,8 @@
                         'shimmer': 'shimmer 2s linear infinite',
                         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                         'shake': 'shake 0.5s ease-in-out',
+                        'slide-left': 'slideLeft 0.3s ease-out',
+                        'bounce-x': 'bounceX 0.6s ease-out',
                     },
                     keyframes: {
                         fadeIn: {
@@ -64,6 +66,15 @@
                         slideUp: {
                             '0%': { opacity: '0', transform: 'translateY(30px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideLeft: {
+                            '0%': { transform: 'translateX(10px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        bounceX: {
+                            '0%, 20%, 50%, 80%, 100%': { transform: 'translateX(0)' },
+                            '40%': { transform: 'translateX(-4px)' },
+                            '60%': { transform: 'translateX(-2px)' },
                         },
                         scaleIn: {
                             '0%': { opacity: '0', transform: 'scale(0.95)' },
@@ -262,6 +273,94 @@
             animation: pulse 2s infinite;
         }
 
+        /* Enhanced Back Button Styles */
+        .back-button-enhanced {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(234, 179, 8, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .back-button-enhanced::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(234, 179, 8, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .back-button-enhanced:hover::before {
+            left: 100%;
+        }
+
+        .back-button-enhanced:hover {
+            transform: translateY(-3px) scale(1.02);
+            border-color: rgba(234, 179, 8, 0.6);
+            box-shadow: 0 12px 40px rgba(234, 179, 8, 0.2);
+            background: linear-gradient(145deg, rgba(234, 179, 8, 0.15), rgba(30, 41, 59, 0.9));
+        }
+
+        .back-button-enhanced .back-icon {
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 8px rgba(234, 179, 8, 0.3));
+        }
+
+        .back-button-enhanced:hover .back-icon {
+            transform: translateX(-4px) scale(1.1);
+            color: #facc15;
+            filter: drop-shadow(0 0 12px rgba(234, 179, 8, 0.6));
+        }
+
+        .back-button-enhanced .back-text {
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .back-button-enhanced:hover .back-text {
+            color: #facc15;
+            transform: translateX(-2px);
+        }
+
+        .back-button-enhanced .back-accent {
+            position: absolute;
+            top: 50%;
+            left: 8px;
+            transform: translateY(-50%);
+            width: 2px;
+            height: 20px;
+            background: linear-gradient(to bottom, #eab308, #ca8a04);
+            border-radius: 1px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .back-button-enhanced:hover .back-accent {
+            opacity: 1;
+            height: 30px;
+            box-shadow: 0 0 10px rgba(234, 179, 8, 0.5);
+        }
+
+        /* Breadcrumb Style Enhancement */
+        .breadcrumb-back {
+            background: rgba(234, 179, 8, 0.1);
+            border: 1px solid rgba(234, 179, 8, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .breadcrumb-back:hover {
+            background: rgba(234, 179, 8, 0.2);
+            border-color: rgba(234, 179, 8, 0.4);
+            transform: translateY(-1px);
+        }
+
         ::-webkit-scrollbar {
             width: 6px;
             height: 6px;
@@ -319,11 +418,39 @@
                 </a>
             </nav>
 
-            <!-- Back Button -->
-            <a href="/dashboard" class="btn-outline-cinema px-6 py-2.5 text-sm font-medium rounded-lg inline-flex items-center space-x-2">
-                <i class="fas fa-arrow-left"></i>
-                <span>Kembali</span>
-            </a>
+            <!-- Enhanced Back Button -->
+            <div class="flex items-center space-x-4">
+                <!-- Breadcrumb Style Back -->
+                <div class="hidden lg:flex items-center space-x-2 breadcrumb-back px-3 py-1.5 rounded-lg text-xs">
+                    <a href="/dashboard" class="text-cinema-400 hover:text-cinema-300 transition-colors">Dashboard</a>
+                    <i class="fas fa-chevron-right text-slate-500 text-xs"></i>
+                    <span class="text-slate-300">Film</span>
+                </div>
+
+                <!-- Main Enhanced Back Button -->
+                <a href="/dashboard" class="back-button-enhanced group relative px-6 py-3 rounded-xl inline-flex items-center space-x-3 animate-slide-left">
+                    <!-- Accent Line -->
+                    <div class="back-accent"></div>
+                    
+                    <!-- Icon Container -->
+                    <div class="relative">
+                        <div class="w-8 h-8 bg-gradient-to-br from-cinema-500/20 to-cinema-700/20 rounded-lg flex items-center justify-center group-hover:from-cinema-500/30 group-hover:to-cinema-700/30 transition-all duration-300">
+                            <i class="fas fa-arrow-left back-icon text-cinema-400 text-sm"></i>
+                        </div>
+                        <!-- Glow Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-cinema-500/0 to-cinema-700/0 group-hover:from-cinema-500/20 group-hover:to-cinema-700/20 rounded-lg blur-sm transition-all duration-300"></div>
+                    </div>
+                    
+                    <!-- Text -->
+                    <div class="flex flex-col">
+                        <span class="back-text text-sm text-slate-300 group-hover:text-cinema-300">Kembali</span>
+                        <span class="text-xs text-slate-500 group-hover:text-cinema-500 transition-colors duration-300">Dashboard</span>
+                    </div>
+                    
+                    <!-- Hover Indicator -->
+                    <div class="absolute top-1 right-1 w-2 h-2 bg-cinema-500/0 group-hover:bg-cinema-500/60 rounded-full transition-all duration-300"></div>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -623,6 +750,24 @@
 
     <!-- JavaScript -->
     <script>
+        // Enhanced Back Button Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const backButton = document.querySelector('.back-button-enhanced');
+            
+            // Add entrance animation
+            setTimeout(() => {
+                backButton.classList.add('animate-bounce-x');
+            }, 500);
+            
+            // Add click animation
+            backButton.addEventListener('click', function(e) {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+
         // Warning Modal Functions
         function showScheduleWarning() {
             const modal = document.getElementById('warningModal');

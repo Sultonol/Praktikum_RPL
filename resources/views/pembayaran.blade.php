@@ -8,22 +8,25 @@
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #121212;
+            color: #f5f5f5;
         }
 
         .tiket-card {
-            background-color: #fff;
+            background-color: #1e1e1e;
             border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
             padding: 25px;
             width: 400px;
             margin-bottom: 25px;
+            color: #f5f5f5;
         }
 
         .judul-film {
             font-size: 22px;
             font-weight: bold;
             margin-bottom: 10px;
+            color: #ffd700;
         }
 
         .detail {
@@ -35,6 +38,7 @@
             font-size: 20px;
             font-weight: bold;
             margin-top: 20px;
+            color: #ffd700;
         }
 
         .qris {
@@ -45,10 +49,15 @@
             display: inline-block;
             margin-top: 30px;
             padding: 10px 25px;
-            background-color: #007bff;
-            color: white;
+            background-color: #ffd700;
+            color: #121212;
             border-radius: 8px;
             text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-kembali:hover {
+            background-color: #e6c200;
         }
     </style>
 </head>
@@ -66,8 +75,7 @@
 
     <div class="tiket-card">
         <div class="judul-film">{{ $jadwal->film->judul }}</div>
-        <div class="detail">Studio: {{ $jadwal->studio->nomor_studio }} ({{ $jadwal->studio->bioskop->nama_bioskop }})
-        </div>
+        <div class="detail">Studio: {{ $jadwal->studio->nomor_studio }} ({{ $jadwal->studio->bioskop->nama_bioskop }})</div>
         <div class="detail">Tanggal & Waktu: {{ $jadwal->tanggal }} - {{ $jadwal->jam_tayang }}</div>
         <div class="detail">Nomor Kursi: {{ implode(', ', $kursiList) }}</div>
         <div class="detail">Jumlah Tiket: {{ count($kursiList) }}</div>
@@ -83,7 +91,7 @@
         @endif
     </div>
 
-    <a href="{{ route('jadwal.index') }}" class="btn-kembali">Kembali ke Beranda</a>
+    <a href="{{ route('film.index') }}" class="btn-kembali">Back to Dashboard</a>
 </body>
 
 </html>

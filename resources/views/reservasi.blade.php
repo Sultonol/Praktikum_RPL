@@ -62,46 +62,98 @@
                     },
                     keyframes: {
                         fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(30px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
                         },
                         slideUp: {
-                            '0%': { opacity: '0', transform: 'translateY(40px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(40px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
                         },
                         scaleIn: {
-                            '0%': { opacity: '0', transform: 'scale(0.9)' },
-                            '100%': { opacity: '1', transform: 'scale(1)' },
+                            '0%': {
+                                opacity: '0',
+                                transform: 'scale(0.9)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'scale(1)'
+                            },
                         },
                         float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-15px)' },
+                            '0%, 100%': {
+                                transform: 'translateY(0px)'
+                            },
+                            '50%': {
+                                transform: 'translateY(-15px)'
+                            },
                         },
                         glow: {
-                            '0%': { boxShadow: '0 0 30px rgba(234, 179, 8, 0.3)' },
-                            '100%': { boxShadow: '0 0 60px rgba(234, 179, 8, 0.6)' },
+                            '0%': {
+                                boxShadow: '0 0 30px rgba(234, 179, 8, 0.3)'
+                            },
+                            '100%': {
+                                boxShadow: '0 0 60px rgba(234, 179, 8, 0.6)'
+                            },
                         },
                         shimmer: {
-                            '0%': { transform: 'translateX(-100%)' },
-                            '100%': { transform: 'translateX(100%)' },
+                            '0%': {
+                                transform: 'translateX(-100%)'
+                            },
+                            '100%': {
+                                transform: 'translateX(100%)'
+                            },
                         },
                         bounceGentle: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-8px)' },
+                            '0%, 100%': {
+                                transform: 'translateY(0)'
+                            },
+                            '50%': {
+                                transform: 'translateY(-8px)'
+                            },
                         },
                         seatSelect: {
-                            '0%': { transform: 'scale(1)' },
-                            '50%': { transform: 'scale(1.2)' },
-                            '100%': { transform: 'scale(1.1)' },
+                            '0%': {
+                                transform: 'scale(1)'
+                            },
+                            '50%': {
+                                transform: 'scale(1.2)'
+                            },
+                            '100%': {
+                                transform: 'scale(1.1)'
+                            },
                         },
                         receiptSlide: {
-                            '0%': { opacity: '0', transform: 'translateX(20px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateX(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateX(0)'
+                            },
                         },
                         priceUpdate: {
-                            '0%': { transform: 'scale(1)' },
-                            '50%': { transform: 'scale(1.1)' },
-                            '100%': { transform: 'scale(1)' },
+                            '0%': {
+                                transform: 'scale(1)'
+                            },
+                            '50%': {
+                                transform: 'scale(1.1)'
+                            },
+                            '100%': {
+                                transform: 'scale(1)'
+                            },
                         }
                     }
                 }
@@ -140,7 +192,7 @@
             background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98));
             backdrop-filter: blur(25px);
             border: 2px solid rgba(234, 179, 8, 0.3);
-            box-shadow: 
+            box-shadow:
                 0 25px 50px rgba(0, 0, 0, 0.3),
                 0 0 0 1px rgba(234, 179, 8, 0.1),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -269,7 +321,7 @@
         }
 
         /* Selected seat - Luxurious Gold */
-        .seat-checkbox:checked + .seat-label {
+        .seat-checkbox:checked+.seat-label {
             background: linear-gradient(145deg, #eab308 0%, #f59e0b 50%, #ca8a04 100%) !important;
             border-color: #eab308 !important;
             color: #0f172a !important;
@@ -292,7 +344,7 @@
         .screen {
             background: linear-gradient(145deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
             border-radius: 25px;
-            box-shadow: 
+            box-shadow:
                 0 15px 35px rgba(0, 0, 0, 0.4),
                 inset 0 2px 4px rgba(255, 255, 255, 0.3);
             position: relative;
@@ -429,8 +481,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         /* Notification Enhancement */
@@ -457,7 +514,9 @@
     <div class="fixed inset-0 overflow-hidden pointer-events-none">
         <div class="absolute top-20 left-20 w-80 h-80 bg-cinema-500/8 rounded-full blur-3xl floating-element"></div>
         <div class="absolute bottom-20 right-20 w-96 h-96 bg-cinema-400/6 rounded-full blur-3xl floating-element"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cinema-600/4 rounded-full blur-3xl floating-element"></div>
+        <div
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cinema-600/4 rounded-full blur-3xl floating-element">
+        </div>
         <div class="absolute top-10 right-1/4 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl floating-element"></div>
     </div>
 
@@ -467,40 +526,82 @@
             <!-- Logo -->
             <div class="flex items-center space-x-5">
                 <div class="logo-glow">
-                    <div class="w-14 h-14 bg-gradient-to-br from-cinema-500 via-cinema-400 to-cinema-600 rounded-xl flex items-center justify-center shadow-2xl">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-cinema-500 via-cinema-400 to-cinema-600 rounded-xl flex items-center justify-center shadow-2xl">
                         <i class="fas fa-film text-dark-900 text-2xl"></i>
                     </div>
                 </div>
                 <div>
-                    <h1 class="text-3xl font-serif font-bold text-white tracking-tight">CINEMATION</h1>
-                    <p class="text-xs text-cinema-400 font-medium tracking-widest uppercase">Premium Cinema Experience</p>
+                    <h1 class="text-2xl font-serif font-bold text-white tracking-tight">CINESTREAM</h1>
+                    <p class="text-xs text-cinema-400 font-medium tracking-widest uppercase">Premium Cinema Experience
+                    </p>
                 </div>
             </div>
 
             <!-- Enhanced Navigation -->
             <nav class="hidden md:flex items-center space-x-10">
-                <a href="/dashboard" class="text-slate-300 hover:text-cinema-400 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
+                <a href="/dashboard"
+                    class="text-slate-300 hover:text-cinema-400 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
                     Dashboard
-                    <span class="absolute -bottom-2 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
+                    <span
+                        class="absolute -bottom-2 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
                 </a>
-                <a href="{{ route('film.index') }}" class="text-slate-300 hover:text-cinema-400 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
+                <a href="{{ route('film.index') }}"
+                    class="text-slate-300 hover:text-cinema-400 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
                     Film
-                    <span class="absolute -bottom-2 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
+                    <span
+                        class="absolute -bottom-2 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
                 </a>
-                <a href="{{ route('jadwal.index') }}" class="text-slate-300 hover:text-cinema-400 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
+                <a href="{{ route('jadwal.index') }}"
+                    class="text-slate-300 hover:text-cinema-400 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
                     Jadwal
-                    <span class="absolute -bottom-2 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
+                    <span
+                        class="absolute -bottom-2 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
                 </a>
                 <a href="#" class="text-cinema-400 font-semibold text-sm uppercase tracking-wide relative">
                     Pilih Kursi
-                    <span class="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full"></span>
+                    <span
+                        class="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full"></span>
                 </a>
             </nav>
 
-            <!-- Enhanced Back Button -->
-            <a href="{{ route('jadwal.index') }}" class="btn-outline-cinema px-8 py-3 text-sm font-semibold rounded-xl inline-flex items-center space-x-3">
-                <i class="fas fa-arrow-left"></i>
-                <span>Kembali</span>
+            <div class="hidden lg:flex items-center space-x-2 breadcrumb-back px-3 py-1.5 rounded-lg text-xs">
+                <a href="/dashboard" class="text-cinema-400 hover:text-cinema-300 transition-colors">Dashboard</a>
+                <i class="fas fa-chevron-right text-slate-500 text-xs"></i>
+                <a href="/film" class="text-cinema-400 hover:text-cinema-300 transition-colors">FIlm</a>
+                <i class="fas fa-chevron-right text-slate-500 text-xs"></i>
+                <a href="/jadwal" class="text-cinema-400 hover:text-cinema-300 transition-colors">Jadwal</a>
+                <i class="fas fa-chevron-right text-slate-500 text-xs"></i>
+                <span class="text-slate-300">Reservasi</span>
+            </div>
+
+            <a href="{{ route('film.index') }}"
+                class="back-button-enhanced group relative px-6 py-3 rounded-xl inline-flex items-center space-x-3 animate-slide-left">
+                <!-- Accent Line -->
+                <div class="back-accent"></div>
+
+                <!-- Icon Container -->
+                <div class="relative">
+                    <div
+                        class="w-8 h-8 bg-gradient-to-br from-cinema-500/20 to-cinema-700/20 rounded-lg flex items-center justify-center group-hover:from-cinema-500/30 group-hover:to-cinema-700/30 transition-all duration-300">
+                        <i class="fas fa-arrow-left back-icon text-cinema-400 text-sm"></i>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-cinema-500/0 to-cinema-700/0 group-hover:from-cinema-500/20 group-hover:to-cinema-700/20 rounded-lg blur-sm transition-all duration-300">
+                    </div>
+                </div>
+
+                <!-- Text -->
+                <div class="flex flex-col">
+                    <span class="back-text text-sm text-slate-300 group-hover:text-cinema-300">Kembali</span>
+                    <span
+                        class="text-xs text-slate-500 group-hover:text-cinema-500 transition-colors duration-300">Jadwal</span>
+                </div>
+
+                <!-- Hover Indicator -->
+                <div
+                    class="absolute top-1 right-1 w-2 h-2 bg-cinema-500/0 group-hover:bg-cinema-500/60 rounded-full transition-all duration-300">
+                </div>
             </a>
         </div>
     </header>
@@ -514,8 +615,9 @@
                     <h2 class="text-5xl font-serif font-bold text-white mb-6 leading-tight">
                         {{ $jadwal->film->judul }}
                     </h2>
-                    <p class="text-xl text-slate-300 mb-8 font-light">Pilih kursi terbaik untuk pengalaman menonton yang tak terlupakan</p>
-                    
+                    <p class="text-xl text-slate-300 mb-8 font-light">Pilih kursi terbaik untuk pengalaman menonton yang
+                        tak terlupakan</p>
+
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
                         <div class="bg-dark-800/40 backdrop-blur-sm rounded-2xl p-6 border border-cinema-500/20">
                             <div class="flex items-center justify-center text-cinema-400 mb-3">
@@ -524,7 +626,7 @@
                             <p class="text-sm text-slate-400 mb-1">Tanggal</p>
                             <p class="text-lg font-semibold text-white">{{ $jadwal->tanggal }}</p>
                         </div>
-                        
+
                         <div class="bg-dark-800/40 backdrop-blur-sm rounded-2xl p-6 border border-cinema-500/20">
                             <div class="flex items-center justify-center text-cinema-400 mb-3">
                                 <i class="fas fa-clock text-2xl"></i>
@@ -532,7 +634,7 @@
                             <p class="text-sm text-slate-400 mb-1">Jam Tayang</p>
                             <p class="text-lg font-semibold text-white">{{ $jadwal->jam_tayang }}</p>
                         </div>
-                        
+
                         <div class="bg-dark-800/40 backdrop-blur-sm rounded-2xl p-6 border border-cinema-500/20">
                             <div class="flex items-center justify-center text-cinema-400 mb-3">
                                 <i class="fas fa-couch text-2xl"></i>
@@ -540,7 +642,7 @@
                             <p class="text-sm text-slate-400 mb-1">Studio</p>
                             <p class="text-lg font-semibold text-white">Studio {{ $jadwal->studio->nomor_studio }}</p>
                         </div>
-                        
+
                         <div class="bg-dark-800/40 backdrop-blur-sm rounded-2xl p-6 border border-cinema-500/20">
                             <div class="flex items-center justify-center text-cinema-400 mb-3">
                                 <i class="fas fa-building text-2xl"></i>
@@ -569,13 +671,14 @@
                                 </h3>
                                 <p class="text-slate-400 text-lg">Pilih metode pembayaran yang Anda inginkan</p>
                             </div>
-                            
+
                             <div class="max-w-2xl mx-auto">
-                                <select name="metode_pembayaran" id="paymentMethod" class="custom-select w-full px-6 py-4 rounded-2xl text-lg font-medium">
-                                    <option value="">🎫 Pilih Metode Pembayaran</option>
-                                    <option value="transfer">🏦 Transfer Bank</option>
-                                    <option value="e-wallet">📱 E-Wallet (OVO, GoPay, DANA)</option>
-                                    <option value="qris">📱 QRIS - Scan & Pay</option>
+                                <select name="metode_pembayaran" id="paymentMethod"
+                                    class="custom-select w-full px-6 py-4 rounded-2xl text-lg font-medium">
+                                    <option value="">Pilih Metode Pembayaran</option>
+                                    <option value="transfer">Transfer Bank</option>
+                                    <option value="e-wallet">E-Wallet (OVO, GoPay, DANA)</option>
+                                    <option value="qris">QRIS - Scan & Pay</option>
                                 </select>
                             </div>
                         </div>
@@ -587,7 +690,8 @@
                                     <i class="fas fa-couch mr-4 text-cinema-400 text-4xl"></i>
                                     Pilih Kursi Premium
                                 </h3>
-                                <p class="text-slate-400 text-lg">Klik pada kursi yang tersedia untuk memilih tempat duduk Anda</p>
+                                <p class="text-slate-400 text-lg">Klik pada kursi yang tersedia untuk memilih tempat
+                                    duduk Anda</p>
                             </div>
 
                             <!-- Enhanced Screen -->
@@ -605,55 +709,59 @@
                                         $totalRows = ceil(count($kursis) / $seatsPerRow);
                                         $rowLabels = range('A', chr(ord('A') + $totalRows - 1));
                                     @endphp
-                                    
+
                                     @for ($row = 0; $row < $totalRows; $row++)
                                         <div class="flex items-center justify-center mb-4">
                                             <!-- Row Label Left -->
-                                            <div class="row-label w-12 h-12 flex items-center justify-center text-lg mr-6">
+                                            <div
+                                                class="row-label w-12 h-12 flex items-center justify-center text-lg mr-6">
                                                 {{ $rowLabels[$row] }}
                                             </div>
-                                            
+
                                             <!-- Seats -->
                                             <div class="flex">
                                                 @for ($seatInRow = 0; $seatInRow < $seatsPerRow; $seatInRow++)
                                                     @php
                                                         $seatIndex = $row * $seatsPerRow + $seatInRow;
                                                     @endphp
-                                                    
+
                                                     @if ($seatIndex < count($kursis))
                                                         @php
                                                             $kursi = $kursis[$seatIndex];
-                                                            $isAvailable = !in_array($kursi->kursi_id, $reservedKursiIds);
+                                                            $isAvailable = !in_array(
+                                                                $kursi->kursi_id,
+                                                                $reservedKursiIds,
+                                                            );
                                                         @endphp
-                                                        
+
                                                         <div class="relative">
-                                                            <input type="checkbox" 
-                                                                   name="kursi_id[]" 
-                                                                   value="{{ $kursi->kursi_id }}"
-                                                                   id="seat_{{ $kursi->kursi_id }}"
-                                                                   class="seat-checkbox"
-                                                                   data-seat-number="{{ $rowLabels[$row] }}{{ $seatInRow + 1 }}"
-                                                                   data-price="{{ $jadwal->harga ?? 50000 }}"
-                                                                   {{ !$isAvailable ? 'disabled' : '' }}>
-                                                            
-                                                            <label for="seat_{{ $kursi->kursi_id }}" 
-                                                                   class="seat-label {{ $isAvailable ? 'seat-available' : 'seat-occupied' }}">
+                                                            <input type="checkbox" name="kursi_id[]"
+                                                                value="{{ $kursi->kursi_id }}"
+                                                                id="seat_{{ $kursi->kursi_id }}"
+                                                                class="seat-checkbox"
+                                                                data-seat-number="{{ $rowLabels[$row] }}{{ $seatInRow + 1 }}"
+                                                                data-price="{{ $jadwal->harga ?? 50000 }}"
+                                                                {{ !$isAvailable ? 'disabled' : '' }}>
+
+                                                            <label for="seat_{{ $kursi->kursi_id }}"
+                                                                class="seat-label {{ $isAvailable ? 'seat-available' : 'seat-occupied' }}">
                                                                 {{ $seatInRow + 1 }}
                                                             </label>
                                                         </div>
                                                     @else
                                                         <div class="w-12 h-12 m-1"></div>
                                                     @endif
-                                                    
+
                                                     <!-- Enhanced Aisle Space -->
                                                     @if ($seatInRow == 4)
                                                         <div class="w-8"></div>
                                                     @endif
                                                 @endfor
                                             </div>
-                                            
+
                                             <!-- Row Label Right -->
-                                            <div class="row-label w-12 h-12 flex items-center justify-center text-lg ml-6">
+                                            <div
+                                                class="row-label w-12 h-12 flex items-center justify-center text-lg ml-6">
                                                 {{ $rowLabels[$row] }}
                                             </div>
                                         </div>
@@ -668,7 +776,9 @@
                                     <span class="text-slate-300 font-medium">Tersedia</span>
                                 </div>
                                 <div class="legend-item flex items-center space-x-3">
-                                    <div class="seat-label w-10 h-10 text-sm" style="background: linear-gradient(145deg, #eab308 0%, #f59e0b 50%, #ca8a04 100%); border-color: #eab308; color: #0f172a;">D</div>
+                                    <div class="seat-label w-10 h-10 text-sm"
+                                        style="background: linear-gradient(145deg, #eab308 0%, #f59e0b 50%, #ca8a04 100%); border-color: #eab308; color: #0f172a;">
+                                        D</div>
                                     <span class="text-slate-300 font-medium">Dipilih</span>
                                 </div>
                                 <div class="legend-item flex items-center space-x-3">
@@ -680,14 +790,14 @@
 
                         <!-- Enhanced Action Buttons -->
                         <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                            <a href="{{ route('jadwal.index') }}" 
-                               class="btn-outline-cinema px-10 py-5 text-lg font-semibold rounded-2xl inline-flex items-center justify-center space-x-4 min-w-[200px]">
+                            <a href="{{ route('jadwal.index') }}"
+                                class="btn-outline-cinema px-10 py-5 text-lg font-semibold rounded-2xl inline-flex items-center justify-center space-x-4 min-w-[200px]">
                                 <i class="fas fa-arrow-left text-xl"></i>
                                 <span>Kembali ke Jadwal</span>
                             </a>
-                            
+
                             <button type="submit" id="submitButton"
-                                    class="btn-cinema px-10 py-5 text-lg font-bold text-dark-900 rounded-2xl inline-flex items-center justify-center space-x-4 min-w-[200px] relative">
+                                class="btn-cinema px-10 py-5 text-lg font-bold text-dark-900 rounded-2xl inline-flex items-center justify-center space-x-4 min-w-[200px] relative">
                                 <i class="fas fa-ticket-alt text-xl"></i>
                                 <span id="buttonText">Pesan Kursi</span>
                                 <i class="fas fa-arrow-right text-xl"></i>
@@ -724,7 +834,8 @@
                                 <div class="flex justify-between items-center">
                                     <div>
                                         <p class="text-sm text-slate-400 mb-1">Tanggal & Waktu</p>
-                                        <p class="text-white font-semibold">{{ $jadwal->tanggal }} - {{ $jadwal->jam_tayang }}</p>
+                                        <p class="text-white font-semibold">{{ $jadwal->tanggal }} -
+                                            {{ $jadwal->jam_tayang }}</p>
                                     </div>
                                     <i class="fas fa-calendar-alt text-cinema-400"></i>
                                 </div>
@@ -734,8 +845,10 @@
                                 <div class="flex justify-between items-center">
                                     <div>
                                         <p class="text-sm text-slate-400 mb-1">Studio & Bioskop</p>
-                                        <p class="text-white font-semibold">Studio {{ $jadwal->studio->nomor_studio }}</p>
-                                        <p class="text-xs text-slate-500">{{ $jadwal->studio->bioskop->nama_bioskop }}</p>
+                                        <p class="text-white font-semibold">Studio {{ $jadwal->studio->nomor_studio }}
+                                        </p>
+                                        <p class="text-xs text-slate-500">{{ $jadwal->studio->bioskop->nama_bioskop }}
+                                        </p>
                                     </div>
                                     <i class="fas fa-building text-cinema-400"></i>
                                 </div>
@@ -748,7 +861,8 @@
                                 <div class="flex justify-between items-start mb-3">
                                     <div>
                                         <p class="text-sm text-slate-400 mb-1">Kursi Dipilih</p>
-                                        <p class="text-white font-semibold" id="selectedSeatsText">Belum ada kursi dipilih</p>
+                                        <p class="text-white font-semibold" id="selectedSeatsText">Belum ada kursi
+                                            dipilih</p>
                                     </div>
                                     <i class="fas fa-couch text-cinema-400"></i>
                                 </div>
@@ -779,7 +893,11 @@
                             </div>
                             <div class="flex justify-between items-center text-slate-300">
                                 <span>Harga per Tiket</span>
-                                <span>Rp {{ number_format($jadwal->harga ?? 50000, 0, ',', '.') }}</span>
+                                @php
+                                    $harga = $jadwal->harga ?? 50000;
+                                    $harga_bulat = $harga > 40000 ? 45000 : 35000;
+                                @endphp
+                                <span>Rp {{ number_format($harga_bulat, 0, ',', '.') }}</span>
                             </div>
                             <div class="flex justify-between items-center text-slate-300">
                                 <span>Subtotal</span>
@@ -801,7 +919,8 @@
                                     <p class="text-3xl font-bold price-highlight" id="totalPrice">Rp 0</p>
                                 </div>
                                 <div class="text-right">
-                                    <div class="w-16 h-16 bg-gradient-to-br from-cinema-500 to-cinema-600 rounded-full flex items-center justify-center">
+                                    <div
+                                        class="w-16 h-16 bg-gradient-to-br from-cinema-500 to-cinema-600 rounded-full flex items-center justify-center">
                                         <i class="fas fa-money-bill-wave text-dark-900 text-xl"></i>
                                     </div>
                                 </div>
@@ -850,16 +969,17 @@
                 const subtotal = document.getElementById('subtotal');
                 const totalPrice = document.getElementById('totalPrice');
 
-                // Update seat selection
+                // Update kursi dipilih
                 if (selectedSeats.length > 0) {
                     const seatNumbers = Array.from(selectedSeats).map(seat => seat.dataset.seatNumber);
                     selectedSeatsText.textContent = seatNumbers.join(', ');
-                    
-                    // Create seat badges
+
+                    // Lencana kursi
                     seatBadges.innerHTML = '';
                     seatNumbers.forEach(seatNumber => {
                         const badge = document.createElement('span');
-                        badge.className = 'inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-cinema-500/20 text-cinema-400 border border-cinema-500/30';
+                        badge.className =
+                            'inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-cinema-500/20 text-cinema-400 border border-cinema-500/30';
                         badge.textContent = seatNumber;
                         seatBadges.appendChild(badge);
                     });
@@ -872,26 +992,30 @@
                     receiptCard.classList.add('empty-receipt');
                 }
 
-                // Update pricing
+                // Pembulatan harga tiket ke puluhan ribu
+                const roundDownToNearest = (value, nearest) => Math.floor(value / nearest) * nearest;
+                const roundedTicketPrice = ticketPrice > 40000 ? 45000 : 35000;
+
                 const count = selectedSeats.length;
-                const subtotalAmount = count * ticketPrice;
+                const subtotalAmount = count * roundedTicketPrice;
                 const totalAmount = subtotalAmount + (count > 0 ? adminFee : 0);
 
                 ticketCount.textContent = count;
                 subtotal.textContent = 'Rp ' + subtotalAmount.toLocaleString('id-ID');
                 totalPrice.textContent = 'Rp ' + totalAmount.toLocaleString('id-ID');
 
-                // Add animation to price
+                // Animasi
                 totalPrice.style.animation = 'price-update 0.4s ease-out';
                 setTimeout(() => {
                     totalPrice.style.animation = '';
                 }, 400);
             }
 
+
             function updatePaymentMethod() {
                 const paymentMethodText = document.getElementById('paymentMethodText');
                 const selectedMethod = paymentSelect.value;
-                
+
                 const methodNames = {
                     'transfer': '🏦 Transfer Bank',
                     'e-wallet': '📱 E-Wallet',
@@ -904,7 +1028,7 @@
             function updateButtonText() {
                 const selectedSeats = document.querySelectorAll('input[name="kursi_id[]"]:checked');
                 const buttonText = document.getElementById('buttonText');
-                
+
                 if (selectedSeats.length > 0) {
                     buttonText.textContent = `Pesan ${selectedSeats.length} Kursi`;
                 } else {
@@ -932,10 +1056,11 @@
                     // Enhanced loading state
                     const submitButton = document.getElementById('submitButton');
                     const buttonText = document.getElementById('buttonText');
-                    
+
                     submitButton.disabled = true;
                     submitButton.classList.add('opacity-75');
-                    buttonText.innerHTML = '<div class="loading-spinner w-5 h-5 mr-2"></div>Memproses Pesanan...';
+                    buttonText.innerHTML =
+                        '<div class="loading-spinner w-5 h-5 mr-2"></div>Memproses Pesanan...';
                 }
             });
         });
@@ -945,7 +1070,7 @@
             const notification = document.createElement('div');
             let bgClass = 'bg-gradient-to-r from-cinema-500 to-cinema-600 text-dark-900';
             let icon = 'fa-info-circle';
-            
+
             if (type === 'error') {
                 bgClass = 'bg-gradient-to-r from-red-500 to-red-600 text-white';
                 icon = 'fa-exclamation-triangle';
@@ -953,17 +1078,18 @@
                 bgClass = 'bg-gradient-to-r from-green-500 to-green-600 text-white';
                 icon = 'fa-check-circle';
             }
-            
-            notification.className = `notification fixed top-6 right-6 z-50 p-6 rounded-2xl shadow-2xl animate-slide-up max-w-sm ${bgClass}`;
+
+            notification.className =
+                `notification fixed top-6 right-6 z-50 p-6 rounded-2xl shadow-2xl animate-slide-up max-w-sm ${bgClass}`;
             notification.innerHTML = `
                 <div class="flex items-start space-x-3">
                     <i class="fas ${icon} text-2xl mt-1"></i>
                     <div class="font-semibold whitespace-pre-line leading-relaxed">${message}</div>
                 </div>
             `;
-            
+
             document.body.appendChild(notification);
-            
+
             setTimeout(() => {
                 notification.style.transform = 'translateX(100%)';
                 setTimeout(() => notification.remove(), 300);

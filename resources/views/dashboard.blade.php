@@ -230,14 +230,14 @@
                     Dashboard
                     <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full"></span>
                 </a>
-                <a href="{{ route('jadwal.index') }}" 
+                <a href="{{ route('film.index') }}" 
                    class="text-gray-300 hover:text-cinema-500 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
                    Film
                     <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
                 </a>
                 <a href="{{ route('tiket') }}" 
                    class="text-gray-300 hover:text-cinema-500 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
-                    Tiket Saya
+                    My Ticket
                     <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
                 </a>
             </nav>

@@ -57,28 +57,58 @@
                     },
                     keyframes: {
                         fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
                         },
                         slideUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(30px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
                         },
                         scaleIn: {
-                            '0%': { opacity: '0', transform: 'scale(0.95)' },
-                            '100%': { opacity: '1', transform: 'scale(1)' },
+                            '0%': {
+                                opacity: '0',
+                                transform: 'scale(0.95)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'scale(1)'
+                            },
                         },
                         float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
+                            '0%, 100%': {
+                                transform: 'translateY(0px)'
+                            },
+                            '50%': {
+                                transform: 'translateY(-10px)'
+                            },
                         },
                         glow: {
-                            '0%': { boxShadow: '0 0 20px rgba(234, 179, 8, 0.2)' },
-                            '100%': { boxShadow: '0 0 40px rgba(234, 179, 8, 0.4)' },
+                            '0%': {
+                                boxShadow: '0 0 20px rgba(234, 179, 8, 0.2)'
+                            },
+                            '100%': {
+                                boxShadow: '0 0 40px rgba(234, 179, 8, 0.4)'
+                            },
                         },
                         shimmer: {
-                            '0%': { transform: 'translateX(-100%)' },
-                            '100%': { transform: 'translateX(100%)' },
+                            '0%': {
+                                transform: 'translateX(-100%)'
+                            },
+                            '100%': {
+                                transform: 'translateX(100%)'
+                            },
                         }
                     }
                 }
@@ -264,7 +294,9 @@
     <div class="fixed inset-0 overflow-hidden pointer-events-none">
         <div class="absolute top-20 left-20 w-64 h-64 bg-cinema-500/10 rounded-full blur-3xl floating-element"></div>
         <div class="absolute bottom-20 right-20 w-80 h-80 bg-cinema-400/5 rounded-full blur-3xl floating-element"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cinema-600/5 rounded-full blur-3xl floating-element"></div>
+        <div
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cinema-600/5 rounded-full blur-3xl floating-element">
+        </div>
     </div>
 
     <!-- Header -->
@@ -273,7 +305,8 @@
             <!-- Logo -->
             <div class="flex items-center space-x-4">
                 <div class="logo-glow">
-                    <div class="w-12 h-12 bg-gradient-to-br from-cinema-500 to-cinema-700 rounded-lg flex items-center justify-center shadow-xl">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-cinema-500 to-cinema-700 rounded-lg flex items-center justify-center shadow-xl">
                         <i class="fas fa-film text-dark-900 text-xl"></i>
                     </div>
                 </div>
@@ -285,26 +318,66 @@
 
             <!-- Navigation -->
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="/dashboard" class="text-slate-300 hover:text-cinema-500 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
+                <a href="/dashboard"
+                    class="text-slate-300 hover:text-cinema-500 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
                     Dashboard
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
                 </a>
-                <a href="{{ route('film.index') }}" class="text-slate-300 hover:text-cinema-500 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
+                <a href="{{ route('film.index') }}"
+                    class="text-slate-300 hover:text-cinema-500 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
                     Film
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
                 </a>
                 <a href="#" class="text-cinema-500 font-semibold text-sm uppercase tracking-wide relative">
                     Jadwal
-                    <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full"></span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full"></span>
                 </a>
             </nav>
 
-            <!-- Back Button -->
-            <a href="{{ route('film.index') }}" class="btn-outline-cinema px-6 py-2.5 text-sm font-medium rounded-lg inline-flex items-center space-x-2">
-                <i class="fas fa-arrow-left"></i>
-                <span>Kembali</span>
-            </a>
-        </div>
+            <div class="flex items-center space-x-4">
+                <!-- Breadcrumb Style Back -->
+                <div class="hidden lg:flex items-center space-x-2 breadcrumb-back px-3 py-1.5 rounded-lg text-xs">
+                    <a href="/dashboard" class="text-cinema-400 hover:text-cinema-300 transition-colors">Dashboard</a>
+                    <i class="fas fa-chevron-right text-slate-500 text-xs"></i>
+                    <a href="/film" class="text-cinema-400 hover:text-cinema-300 transition-colors">FIlm</a>
+                    <i class="fas fa-chevron-right text-slate-500 text-xs"></i>
+                    <span class="text-slate-300">Jadwal</span>
+                </div>
+
+                <!-- Back Button -->
+                <a href="{{ route('jadwal.index') }}"
+                    class="back-button-enhanced group relative px-6 py-3 rounded-xl inline-flex items-center space-x-3 animate-slide-left">
+                    <!-- Accent Line -->
+                    <div class="back-accent"></div>
+
+                    <!-- Icon Container -->
+                    <div class="relative">
+                        <div
+                            class="w-8 h-8 bg-gradient-to-br from-cinema-500/20 to-cinema-700/20 rounded-lg flex items-center justify-center group-hover:from-cinema-500/30 group-hover:to-cinema-700/30 transition-all duration-300">
+                            <i class="fas fa-arrow-left back-icon text-cinema-400 text-sm"></i>
+                        </div>
+                        <!-- Glow Effect -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-cinema-500/0 to-cinema-700/0 group-hover:from-cinema-500/20 group-hover:to-cinema-700/20 rounded-lg blur-sm transition-all duration-300">
+                        </div>
+                    </div>
+
+                    <!-- Text -->
+                    <div class="flex flex-col">
+                        <span class="back-text text-sm text-slate-300 group-hover:text-cinema-300">Kembali</span>
+                        <span
+                            class="text-xs text-slate-500 group-hover:text-cinema-500 transition-colors duration-300">Jadwal</span>
+                    </div>
+
+                    <!-- Hover Indicator -->
+                    <div
+                        class="absolute top-1 right-1 w-2 h-2 bg-cinema-500/0 group-hover:bg-cinema-500/60 rounded-full transition-all duration-300">
+                    </div>
+                </a>
+            </div>
     </header>
 
     <!-- Main Content -->
@@ -323,12 +396,12 @@
                         <!-- Movie Poster -->
                         <div class="flex-shrink-0">
                             <div class="relative">
-                                <img src="{{ asset($film->poster) }}" 
-                                     alt="Poster {{ $film->judul }}" 
-                                     class="w-48 h-72 object-cover rounded-xl shadow-2xl" />
-                                
+                                <img src="{{ asset($film->poster) }}" alt="Poster {{ $film->judul }}"
+                                    class="w-48 h-72 object-cover rounded-xl shadow-2xl" />
+
                                 <!-- Play Button Overlay -->
-                                <div class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-center justify-center cursor-pointer">
+                                <div
+                                    class="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-center justify-center cursor-pointer">
                                     <div class="w-16 h-16 bg-cinema-500 rounded-full flex items-center justify-center">
                                         <i class="fas fa-play text-dark-900 text-xl ml-1"></i>
                                     </div>
@@ -344,16 +417,17 @@
                                     {{ $film->judul }}
                                 </h1>
                                 <div class="flex flex-wrap items-center gap-3 mb-4">
-                                    <span class="genre-tag {{ $genreClass }} px-4 py-2 text-sm font-semibold rounded-full">
-                                        <i class="fas 
-                                            @if($genre == 'Aksi') fa-fist-raised
+                                    <span
+                                        class="genre-tag {{ $genreClass }} px-4 py-2 text-sm font-semibold rounded-full">
+                                        <i
+                                            class="fas 
+                                            @if ($genre == 'Aksi') fa-fist-raised
                                             @elseif($genre == 'Drama') fa-theater-masks
                                             @elseif($genre == 'Komedi') fa-laugh
                                             @elseif($genre == 'Romantis') fa-heart
                                             @elseif($genre == 'Horor') fa-ghost
                                             @elseif($genre == 'Animasi') fa-magic
-                                            @else fa-film
-                                            @endif mr-2"></i>
+                                            @else fa-film @endif mr-2"></i>
                                         {{ $genre }}
                                     </span>
                                     <span class="px-3 py-1 bg-red-600 text-white text-xs font-bold rounded">
@@ -378,7 +452,8 @@
                                     <div class="flex items-center text-slate-300">
                                         <i class="fas fa-star mr-3 text-cinema-500 w-5"></i>
                                         <span class="font-medium">Rating:</span>
-                                        <span class="ml-2 text-cinema-400 font-semibold">{{ $film->rating ?? '8.5' }}/10</span>
+                                        <span
+                                            class="ml-2 text-cinema-400 font-semibold">{{ $film->rating ?? '8.5' }}/10</span>
                                     </div>
                                 </div>
                                 <div class="space-y-4">
@@ -401,7 +476,7 @@
                             </div>
 
                             <!-- Synopsis -->
-                            @if($film->sinopsis)
+                            @if ($film->sinopsis)
                                 <div class="bg-dark-800/50 rounded-xl p-4">
                                     <h3 class="text-lg font-semibold text-cinema-400 mb-2">Sinopsis</h3>
                                     <p class="text-slate-300 leading-relaxed text-sm">{{ $film->sinopsis }}</p>
@@ -422,9 +497,8 @@
                             $tanggalUnik = $jadwals->pluck('tanggal')->unique()->sort();
                         @endphp
                         @foreach ($tanggalUnik as $index => $tanggal)
-                            <div class="date-tab px-6 py-3 rounded-xl cursor-pointer whitespace-nowrap {{ \Carbon\Carbon::parse($tanggal)->isToday() ? 'active' : '' }}" 
-                                 data-date="{{ $tanggal }}"
-                                 onclick="filterByDate('{{ $tanggal }}')">
+                            <div class="date-tab px-6 py-3 rounded-xl cursor-pointer whitespace-nowrap {{ \Carbon\Carbon::parse($tanggal)->isToday() ? 'active' : '' }}"
+                                data-date="{{ $tanggal }}" onclick="filterByDate('{{ $tanggal }}')">
                                 <div class="text-center">
                                     <div class="text-xs font-medium opacity-75">
                                         {{ \Carbon\Carbon::parse($tanggal)->translatedFormat('D') }}
@@ -452,12 +526,11 @@
                         @php
                             $jadwals = $jadwals->sortBy(fn($j) => strtotime($j->tanggal . ' ' . $j->jam_tayang));
                         @endphp
-                        
+
                         @foreach ($jadwals as $index => $jadwal)
-                            <div class="schedule-card rounded-xl p-6 animate-scale-in schedule-item" 
-                                 style="animation-delay: {{ $index * 0.1 }}s"
-                                 data-date="{{ $jadwal->tanggal }}">
-                                
+                            <div class="schedule-card rounded-xl p-6 animate-scale-in schedule-item"
+                                style="animation-delay: {{ $index * 0.1 }}s" data-date="{{ $jadwal->tanggal }}">
+
                                 <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                                     <!-- Schedule Info -->
                                     <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -472,7 +545,8 @@
                                             </div>
                                             <div class="flex items-center text-cinema-400">
                                                 <i class="fas fa-clock mr-2"></i>
-                                                <span class="text-lg font-bold">{{ \Carbon\Carbon::parse($jadwal->jam_tayang)->format('H:i') }}</span>
+                                                <span
+                                                    class="text-lg font-bold">{{ \Carbon\Carbon::parse($jadwal->jam_tayang)->format('H:i') }}</span>
                                             </div>
                                         </div>
 
@@ -504,15 +578,16 @@
                                                 $hargaFix = $jadwal->harga < 40000 ? 35000 : 45000;
                                             @endphp
                                             <div class="price-highlight px-3 py-2 rounded-lg inline-block">
-                                                <span class="text-lg font-bold">Rp{{ number_format($hargaFix, 0, ',', '.') }}</span>
+                                                <span
+                                                    class="text-lg font-bold">Rp{{ number_format($hargaFix, 0, ',', '.') }}</span>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Action Button -->
                                     <div class="flex-shrink-0">
-                                        <a href="{{ route('reservasi', ['jadwal_id' => $jadwal->jadwal_id]) }}" 
-                                           class="btn-cinema px-8 py-4 text-lg font-bold text-dark-900 rounded-xl inline-flex items-center space-x-3 w-full lg:w-auto justify-center">
+                                        <a href="{{ route('reservasi', ['jadwal_id' => $jadwal->jadwal_id]) }}"
+                                            class="btn-cinema px-8 py-4 text-lg font-bold text-dark-900 rounded-xl inline-flex items-center space-x-3 w-full lg:w-auto justify-center">
                                             <i class="fas fa-chair"></i>
                                             <span>Pilih Kursi</span>
                                             <i class="fas fa-arrow-right"></i>
@@ -521,7 +596,8 @@
                                 </div>
 
                                 <!-- Additional Info -->
-                                <div class="mt-4 pt-4 border-t border-slate-700/50 flex flex-wrap items-center gap-4 text-sm text-slate-400">
+                                <div
+                                    class="mt-4 pt-4 border-t border-slate-700/50 flex flex-wrap items-center gap-4 text-sm text-slate-400">
                                     <span class="flex items-center">
                                         <i class="fas fa-users mr-2 text-cinema-500"></i>
                                         {{ rand(15, 45) }} kursi tersisa
@@ -534,7 +610,7 @@
                                         <i class="fas fa-tv mr-2 text-cinema-500"></i>
                                         4K Ultra HD
                                     </span>
-                                    @if(rand(0, 1))
+                                    @if (rand(0, 1))
                                         <span class="flex items-center text-green-400">
                                             <i class="fas fa-check-circle mr-2"></i>
                                             Tersedia
@@ -545,16 +621,18 @@
                         @endforeach
                     </div>
                 </div>
-
             @else
                 <!-- Empty State -->
                 <div class="text-center py-20">
-                    <div class="w-24 h-24 bg-gradient-to-br from-cinema-500 to-cinema-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <div
+                        class="w-24 h-24 bg-gradient-to-br from-cinema-500 to-cinema-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-calendar-times text-dark-900 text-3xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-4">Jadwal Tidak Tersedia</h3>
-                    <p class="text-slate-400 mb-8">Maaf, belum ada jadwal tayang untuk film ini. Silakan coba lagi nanti.</p>
-                    <a href="{{ route('film.index') }}" class="btn-cinema px-8 py-3 text-lg font-semibold text-dark-900 rounded-xl">
+                    <p class="text-slate-400 mb-8">Maaf, belum ada jadwal tayang untuk film ini. Silakan coba lagi
+                        nanti.</p>
+                    <a href="{{ route('film.index') }}"
+                        class="btn-cinema px-8 py-3 text-lg font-semibold text-dark-900 rounded-xl">
                         <i class="fas fa-arrow-left mr-2"></i>Kembali ke Film
                     </a>
                 </div>
@@ -593,7 +671,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);
             const selectedDate = urlParams.get('date');
-            
+
             if (selectedDate) {
                 filterByDate(selectedDate);
             } else {
@@ -652,7 +730,7 @@
                 const originalText = this.innerHTML;
                 this.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Memproses...';
                 this.disabled = true;
-                
+
                 // Re-enable after navigation (fallback)
                 setTimeout(() => {
                     this.innerHTML = originalText;

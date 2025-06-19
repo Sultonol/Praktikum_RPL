@@ -205,7 +205,7 @@
             <!-- Navigation -->
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="#home" class="text-cinema-500 font-semibold text-sm uppercase tracking-wide relative">
-                    Beranda
+                    Dashboard
                     <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full"></span>
                 </a>
                 <a href="#films" class="text-slate-300 hover:text-cinema-500 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
@@ -213,11 +213,11 @@
                     <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
                 </a>
                 <a href="#about" class="text-slate-300 hover:text-cinema-500 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
-                    Tentang
+                    About
                     <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
                 </a>
                 <a href="#contact" class="text-slate-300 hover:text-cinema-500 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
-                    Kontak
+                    Contact Us
                     <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
                 </a>
             </nav>
@@ -231,11 +231,11 @@
                         </a>
                     @else
                         <a href="{{ route('login') }}" class="btn-outline-cinema px-6 py-2.5 text-sm font-medium rounded-lg">
-                            Masuk
+                            Sign In
                         </a>
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="btn-cinema px-6 py-2.5 text-sm font-semibold text-dark-900 rounded-lg">
-                                Daftar
+                                Sign Up
                             </a>
                         @endif
                     @endauth
