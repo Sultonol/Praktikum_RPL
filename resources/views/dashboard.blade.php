@@ -65,16 +65,34 @@
                     },
                     keyframes: {
                         fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(10px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
                         },
                         slideUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
                         },
                         scaleIn: {
-                            '0%': { opacity: '0', transform: 'scale(0.95)' },
-                            '100%': { opacity: '1', transform: 'scale(1)' },
+                            '0%': {
+                                opacity: '0',
+                                transform: 'scale(0.95)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'scale(1)'
+                            },
                         }
                     }
                 }
@@ -213,7 +231,8 @@
             <!-- Logo -->
             <div class="flex items-center space-x-4">
                 <div class="logo-cinema">
-                    <div class="w-12 h-12 bg-gradient-to-br from-cinema-500 to-cinema-700 rounded-lg flex items-center justify-center shadow-xl">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-cinema-500 to-cinema-700 rounded-lg flex items-center justify-center shadow-xl">
                         <i class="fas fa-film text-dark-900 text-xl"></i>
                     </div>
                 </div>
@@ -225,20 +244,23 @@
 
             <!-- Navigation -->
             <nav class="hidden md:flex space-x-8">
-                <a href="{{ route('dashboard') }}" 
-                   class="relative text-cinema-500 font-semibold text-sm uppercase tracking-wide">
+                <a href="{{ route('dashboard') }}"
+                    class="relative text-cinema-500 font-semibold text-sm uppercase tracking-wide">
                     Dashboard
-                    <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full"></span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full"></span>
                 </a>
-                <a href="{{ route('film.index') }}" 
-                   class="text-gray-300 hover:text-cinema-500 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
-                   Film
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
+                <a href="{{ route('film.index') }}"
+                    class="text-gray-300 hover:text-cinema-500 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
+                    Film
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
                 </a>
-                <a href="{{ route('tiket') }}" 
-                   class="text-gray-300 hover:text-cinema-500 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
+                <a href="{{ route('tiket') }}"
+                    class="text-gray-300 hover:text-cinema-500 transition-all duration-300 font-medium text-sm uppercase tracking-wide relative group">
                     My Ticket
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full group-hover:w-full transition-all duration-300"></span>
                 </a>
             </nav>
 
@@ -246,22 +268,26 @@
             <div class="flex items-center space-x-4">
                 <!-- Notifications -->
                 <div class="relative">
-                    <button class="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-cinema-500/10 transition-all duration-300 group">
+                    <button
+                        class="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-cinema-500/10 transition-all duration-300 group">
                         <i class="fas fa-bell text-gray-400 group-hover:text-cinema-500 transition-colors text-sm"></i>
                     </button>
-                    <span class="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center text-xs font-bold text-white">3</span>
+                    <span
+                        class="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center text-xs font-bold text-white">3</span>
                 </div>
 
                 <!-- User Profile -->
                 <div class="flex items-center space-x-3 px-4 py-2 glass-effect rounded-lg">
-                    <img src="https://i.pravatar.cc/32?img=3" alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-cinema-500/30">
+                    <img src="https://i.pravatar.cc/32?img=3" alt="Profile"
+                        class="w-8 h-8 rounded-full object-cover ring-2 ring-cinema-500/30">
                     <div class="hidden sm:block">
                         <div class="text-sm font-semibold text-white">{{ Auth::user()->name }}</div>
                         <div class="text-xs text-cinema-400 font-medium">Member</div>
                     </div>
                     <form action="{{ route('logout') }}" method="POST" class="ml-2">
                         @csrf
-                        <button type="submit" class="text-gray-400 hover:text-red-400 transition-colors p-1" title="Logout">
+                        <button type="submit" class="text-gray-400 hover:text-red-400 transition-colors p-1"
+                            title="Logout">
                             <i class="fas fa-sign-out-alt text-sm"></i>
                         </button>
                     </form>
@@ -273,6 +299,7 @@
     <!-- Main Content -->
     <main class="pt-24 pb-20 px-6">
         <div class="max-w-7xl mx-auto">
+            
             <!-- Hero Section -->
             <section class="mb-12 animate-fade-in">
                 <div class="hero-section rounded-2xl p-8 md:p-12 text-center">
@@ -295,25 +322,36 @@
 
             <!-- Category Filters -->
             <div class="flex flex-wrap justify-center gap-3 mb-12 animate-slide-up">
-                <button onclick="filterMovies('all')" class="genre-btn btn-outline-cinema px-6 py-2.5 text-sm font-semibold rounded-lg active" data-genre="all">
+                <button onclick="filterMovies('all')"
+                    class="genre-btn btn-outline-cinema px-6 py-2.5 text-sm font-semibold rounded-lg active"
+                    data-genre="all">
                     Semua Film
                 </button>
-                <button onclick="filterMovies('trending')" class="genre-btn btn-outline-cinema px-6 py-2.5 text-sm font-medium rounded-lg" data-genre="trending">
+                <button onclick="filterMovies('trending')"
+                    class="genre-btn btn-outline-cinema px-6 py-2.5 text-sm font-medium rounded-lg"
+                    data-genre="trending">
                     Trending
                 </button>
-                <button onclick="filterMovies('action')" class="genre-btn btn-outline-cinema px-6 py-2.5 text-sm font-medium rounded-lg" data-genre="action">
+                <button onclick="filterMovies('action')"
+                    class="genre-btn btn-outline-cinema px-6 py-2.5 text-sm font-medium rounded-lg" data-genre="action">
                     Action
                 </button>
-                <button onclick="filterMovies('romance')" class="genre-btn btn-outline-cinema px-6 py-2.5 text-sm font-medium rounded-lg" data-genre="romance">
+                <button onclick="filterMovies('romance')"
+                    class="genre-btn btn-outline-cinema px-6 py-2.5 text-sm font-medium rounded-lg"
+                    data-genre="romance">
                     Romance
                 </button>
-                <button onclick="filterMovies('animation')" class="genre-btn btn-outline-cinema px-6 py-2.5 text-sm font-medium rounded-lg" data-genre="animation">
+                <button onclick="filterMovies('animation')"
+                    class="genre-btn btn-outline-cinema px-6 py-2.5 text-sm font-medium rounded-lg"
+                    data-genre="animation">
                     Animation
                 </button>
-                <button onclick="filterMovies('horror')" class="genre-btn btn-outline-cinema px-6 py-2.5 text-sm font-medium rounded-lg" data-genre="horror">
+                <button onclick="filterMovies('horror')"
+                    class="genre-btn btn-outline-cinema px-6 py-2.5 text-sm font-medium rounded-lg" data-genre="horror">
                     Horror
                 </button>
-                <button onclick="filterMovies('drama')" class="genre-btn btn-outline-cinema px-6 py-2.5 text-sm font-medium rounded-lg" data-genre="drama">
+                <button onclick="filterMovies('drama')"
+                    class="genre-btn btn-outline-cinema px-6 py-2.5 text-sm font-medium rounded-lg" data-genre="drama">
                     Drama
                 </button>
             </div>
@@ -328,7 +366,8 @@
                         <p class="text-gray-400 text-lg">Film-film terbaru yang sedang tayang di bioskop</p>
                         <div class="w-16 h-1 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full mt-3"></div>
                     </div>
-                    <a href="{{ route('film.index') }}" class="btn-cinema px-6 py-3 text-sm font-semibold text-dark-900 inline-flex items-center space-x-2 rounded-lg">
+                    <a href="{{ route('film.index') }}"
+                        class="btn-cinema px-6 py-3 text-sm font-semibold text-dark-900 inline-flex items-center space-x-2 rounded-lg">
                         <span>Lihat Semua</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -339,12 +378,18 @@
                     @php
                         $genres = ['trending', 'action', 'romance', 'animation', 'horror', 'drama'];
                         $movieTitles = [
-                            'trending' => ['Avengers: Endgame', 'Spider-Man: No Way Home', 'Top Gun: Maverick', 'Avatar: The Way of Water', 'Black Panther'],
+                            'trending' => [
+                                'Avengers: Endgame',
+                                'Spider-Man: No Way Home',
+                                'Top Gun: Maverick',
+                                'Avatar: The Way of Water',
+                                'Black Panther',
+                            ],
                             'action' => ['John Wick 4', 'Fast X', 'Mission Impossible', 'The Batman', 'Mad Max'],
                             'romance' => ['The Notebook', 'Titanic', 'La La Land', 'A Star is Born', 'Me Before You'],
                             'animation' => ['Frozen 2', 'Toy Story 4', 'Encanto', 'Turning Red', 'Soul'],
                             'horror' => ['The Conjuring', 'It Chapter Two', 'A Quiet Place', 'Hereditary', 'Scream'],
-                            'drama' => ['Parasite', 'Joker', 'Green Book', 'Moonlight', 'Manchester by the Sea']
+                            'drama' => ['Parasite', 'Joker', 'Green Book', 'Moonlight', 'Manchester by the Sea'],
                         ];
                         $showtimes = ['10:00', '13:00', '16:00', '19:00', '21:30'];
                     @endphp
@@ -359,52 +404,60 @@
                             $hours = floor($duration / 60);
                             $minutes = $duration % 60;
                         @endphp
-                        <div class="group cinema-card rounded-xl overflow-hidden cursor-pointer movie-card" 
-                             data-genre="{{ $genre }}">
+                        <div class="group cinema-card rounded-xl overflow-hidden cursor-pointer movie-card"
+                            data-genre="{{ $genre }}">
                             <div class="relative overflow-hidden">
-                                <img src="{{ asset('img/gambar' . $i . '.jpeg') }}" alt="{{ $title }}" 
-                                     class="w-full movie-poster transition-transform duration-500 group-hover:scale-105" />
-                                
+                                <img src="{{ asset('img/gambar' . $i . '.jpeg') }}" alt="{{ $title }}"
+                                    class="w-full movie-poster transition-transform duration-500 group-hover:scale-105" />
+
                                 <!-- Overlay -->
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                                
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                </div>
+
                                 <!-- Rating Badge -->
                                 <div class="absolute top-3 right-3">
-                                    <span class="inline-flex items-center px-2 py-1 bg-black/70 backdrop-blur-sm text-cinema-400 text-xs font-bold rounded">
+                                    <span
+                                        class="inline-flex items-center px-2 py-1 bg-black/70 backdrop-blur-sm text-cinema-400 text-xs font-bold rounded">
                                         <i class="fas fa-star mr-1"></i>{{ $rating }}
                                     </span>
                                 </div>
-                                
+
                                 <!-- Genre Badge -->
                                 <div class="absolute top-3 left-3">
-                                    <span class="inline-flex items-center px-2 py-1 bg-cinema-600 text-white text-xs font-bold rounded uppercase">
+                                    <span
+                                        class="inline-flex items-center px-2 py-1 bg-cinema-600 text-white text-xs font-bold rounded uppercase">
                                         {{ $genre }}
                                     </span>
                                 </div>
 
                                 <!-- Play Button -->
-                                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                    <div class="w-12 h-12 bg-cinema-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-xl">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                    <div
+                                        class="w-12 h-12 bg-cinema-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-xl">
                                         <i class="fas fa-play text-dark-900 ml-0.5"></i>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <!-- Movie Info -->
                             <div class="p-4 space-y-3">
-                                <h3 class="text-sm font-bold text-white group-hover:text-cinema-400 transition-colors duration-300 line-clamp-2">
+                                <h3
+                                    class="text-sm font-bold text-white group-hover:text-cinema-400 transition-colors duration-300 line-clamp-2">
                                     {{ $title }}
                                 </h3>
                                 <div class="text-xs text-gray-400 space-y-1">
                                     <p>{{ $hours }}h {{ $minutes }}m • 2024</p>
                                     <p class="uppercase tracking-wide">{{ $genre }}</p>
                                 </div>
-                                
+
                                 <!-- Showtimes -->
                                 <div class="space-y-2">
-                                    <p class="text-xs font-semibold text-gray-300 uppercase tracking-wide">Jam Tayang:</p>
+                                    <p class="text-xs font-semibold text-gray-300 uppercase tracking-wide">Jam Tayang:
+                                    </p>
                                     <div class="flex flex-wrap gap-1">
-                                        @foreach(array_slice($showtimes, 0, 3) as $time)
+                                        @foreach (array_slice($showtimes, 0, 3) as $time)
                                             <button class="showtime-badge cursor-pointer">{{ $time }}</button>
                                         @endforeach
                                     </div>
@@ -426,31 +479,39 @@
                         <div class="w-16 h-1 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full mt-3"></div>
                     </div>
                 </div>
-                
+
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                     @for ($i = 16; $i <= 21; $i++)
-                        <div class="group cinema-card rounded-xl overflow-hidden cursor-pointer animate-scale-in" style="animation-delay: {{ ($i-15) * 0.1 }}s">
+                        <div class="group cinema-card rounded-xl overflow-hidden cursor-pointer animate-scale-in"
+                            style="animation-delay: {{ ($i - 15) * 0.1 }}s">
                             <div class="relative overflow-hidden">
-                                <img src="{{ asset('img/gambar' . (($i-16) % 6 + 1) . '.jpeg') }}" alt="Coming Soon {{ $i }}" 
-                                     class="w-full movie-poster transition-transform duration-500 group-hover:scale-105" />
-                                
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                                
+                                <img src="{{ asset('img/gambar' . ((($i - 16) % 6) + 1) . '.jpeg') }}"
+                                    alt="Coming Soon {{ $i }}"
+                                    class="w-full movie-poster transition-transform duration-500 group-hover:scale-105" />
+
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                </div>
+
                                 <div class="absolute top-3 left-3">
-                                    <span class="inline-flex items-center px-2 py-1 bg-cinema-600 text-white text-xs font-bold rounded uppercase">
+                                    <span
+                                        class="inline-flex items-center px-2 py-1 bg-cinema-600 text-white text-xs font-bold rounded uppercase">
                                         Coming Soon
                                     </span>
                                 </div>
 
-                                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                    <div class="w-10 h-10 bg-cinema-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-xl">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                    <div
+                                        class="w-10 h-10 bg-cinema-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-xl">
                                         <i class="fas fa-calendar text-dark-900 text-sm"></i>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="p-4 space-y-2">
-                                <h3 class="text-sm font-bold text-white group-hover:text-cinema-400 transition-colors duration-300">
+                                <h3
+                                    class="text-sm font-bold text-white group-hover:text-cinema-400 transition-colors duration-300">
                                     Coming Soon {{ $i }}
                                 </h3>
                                 <p class="text-xs text-gray-400">Desember 2024</p>
@@ -469,7 +530,8 @@
                     <p class="text-lg text-gray-300 mb-6">
                         Dapatkan diskon hingga 50% untuk pembelian tiket hari ini!
                     </p>
-                    <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <div
+                        class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
                         <div class="bg-cinema-500 text-dark-900 px-6 py-3 rounded-lg font-bold text-lg">
                             Kode: CINEMA50
                         </div>
@@ -489,36 +551,42 @@
                 <!-- Company Info -->
                 <div class="md:col-span-2 space-y-4">
                     <div class="flex items-center space-x-4">
-                        <div class="w-10 h-10 bg-gradient-to-br from-cinema-500 to-cinema-700 rounded-lg flex items-center justify-center shadow-xl">
+                        <div
+                            class="w-10 h-10 bg-gradient-to-br from-cinema-500 to-cinema-700 rounded-lg flex items-center justify-center shadow-xl">
                             <i class="fas fa-film text-dark-900"></i>
                         </div>
                         <div>
                             <h3 class="text-xl font-serif font-bold text-white">CINEMATION</h3>
-                            <p class="text-xs text-cinema-400 font-medium tracking-widest uppercase">Cinema Experience</p>
+                            <p class="text-xs text-cinema-400 font-medium tracking-widest uppercase">Cinema Experience
+                            </p>
                         </div>
                     </div>
                     <p class="text-gray-400 leading-relaxed max-w-md">
-                        Nikmati pengalaman menonton terbaik dengan teknologi terdepan, 
+                        Nikmati pengalaman menonton terbaik dengan teknologi terdepan,
                         kenyamanan premium, dan layanan berkualitas tinggi.
                     </p>
                     <div class="flex space-x-3">
-                        <a href="#" class="w-10 h-10 glass-effect rounded-lg flex items-center justify-center text-gray-400 hover:text-cinema-500 hover:bg-cinema-500/10 transition-all duration-300">
+                        <a href="#"
+                            class="w-10 h-10 glass-effect rounded-lg flex items-center justify-center text-gray-400 hover:text-cinema-500 hover:bg-cinema-500/10 transition-all duration-300">
                             <i class="fab fa-facebook-f text-sm"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 glass-effect rounded-lg flex items-center justify-center text-gray-400 hover:text-cinema-500 hover:bg-cinema-500/10 transition-all duration-300">
+                        <a href="#"
+                            class="w-10 h-10 glass-effect rounded-lg flex items-center justify-center text-gray-400 hover:text-cinema-500 hover:bg-cinema-500/10 transition-all duration-300">
                             <i class="fab fa-instagram text-sm"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 glass-effect rounded-lg flex items-center justify-center text-gray-400 hover:text-cinema-500 hover:bg-cinema-500/10 transition-all duration-300">
+                        <a href="#"
+                            class="w-10 h-10 glass-effect rounded-lg flex items-center justify-center text-gray-400 hover:text-cinema-500 hover:bg-cinema-500/10 transition-all duration-300">
                             <i class="fab fa-twitter text-sm"></i>
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Quick Links -->
                 <div>
                     <h4 class="text-white font-bold mb-4 relative">
                         Menu
-                        <span class="absolute -bottom-1 left-0 w-6 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full"></span>
+                        <span
+                            class="absolute -bottom-1 left-0 w-6 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full"></span>
                     </h4>
                     <ul class="space-y-2 text-gray-400 text-sm">
                         <li><a href="#" class="hover:text-cinema-500 transition-colors">Jadwal Film</a></li>
@@ -527,22 +595,25 @@
                         <li><a href="#" class="hover:text-cinema-500 transition-colors">Lokasi Bioskop</a></li>
                     </ul>
                 </div>
-                
+
                 <!-- Support -->
                 <div>
                     <h4 class="text-white font-bold mb-4 relative">
                         Bantuan
-                        <span class="absolute -bottom-1 left-0 w-6 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full"></span>
+                        <span
+                            class="absolute -bottom-1 left-0 w-6 h-0.5 bg-gradient-to-r from-cinema-500 to-cinema-400 rounded-full"></span>
                     </h4>
                     <ul class="space-y-2 text-gray-400 text-sm">
                         <li><a href="#" class="hover:text-cinema-500 transition-colors">Pusat Bantuan</a></li>
                         <li><a href="#" class="hover:text-cinema-500 transition-colors">Hubungi Kami</a></li>
-                        <li><a href="#" class="hover:text-cinema-500 transition-colors">Syarat & Ketentuan</a></li>
-                        <li><a href="#" class="hover:text-cinema-500 transition-colors">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:text-cinema-500 transition-colors">Syarat & Ketentuan</a>
+                        </li>
+                        <li><a href="#" class="hover:text-cinema-500 transition-colors">Kebijakan Privasi</a>
+                        </li>
                     </ul>
                 </div>
             </div>
-            
+
             <!-- Bottom Footer -->
             <div class="border-t border-gray-800 pt-6 text-center">
                 <p class="text-gray-500 text-sm">
@@ -559,15 +630,18 @@
                 <i class="fas fa-home text-lg"></i>
                 <span class="text-xs font-medium">Beranda</span>
             </a>
-            <a href="#" class="flex flex-col items-center text-gray-400 hover:text-cinema-500 transition-colors space-y-1">
+            <a href="#"
+                class="flex flex-col items-center text-gray-400 hover:text-cinema-500 transition-colors space-y-1">
                 <i class="fas fa-calendar text-lg"></i>
                 <span class="text-xs">Jadwal</span>
             </a>
-            <a href="#" class="flex flex-col items-center text-gray-400 hover:text-cinema-500 transition-colors space-y-1">
+            <a href="#"
+                class="flex flex-col items-center text-gray-400 hover:text-cinema-500 transition-colors space-y-1">
                 <i class="fas fa-ticket-alt text-lg"></i>
                 <span class="text-xs">Tiket</span>
             </a>
-            <a href="#" class="flex flex-col items-center text-gray-400 hover:text-cinema-500 transition-colors space-y-1">
+            <a href="#"
+                class="flex flex-col items-center text-gray-400 hover:text-cinema-500 transition-colors space-y-1">
                 <i class="fas fa-user text-lg"></i>
                 <span class="text-xs">Profil</span>
             </a>
@@ -580,17 +654,17 @@
         function filterMovies(genre) {
             const movieCards = document.querySelectorAll('.movie-card');
             const genreButtons = document.querySelectorAll('.genre-btn');
-            
+
             // Update button states
             genreButtons.forEach(btn => {
                 btn.classList.remove('btn-cinema', 'active');
                 btn.classList.add('btn-outline-cinema');
             });
-            
+
             const activeBtn = document.querySelector(`[data-genre="${genre}"]`);
             activeBtn.classList.remove('btn-outline-cinema');
             activeBtn.classList.add('btn-cinema', 'active');
-            
+
             // Filter movies with animation
             movieCards.forEach((card, index) => {
                 setTimeout(() => {
